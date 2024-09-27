@@ -304,48 +304,44 @@ from .plot_category_status import plot_category_1_new_complaints_view
 import pandas as pd
 
 def feedback_sentiment_view(request):
-    
     employee_name = request.session.get('employee_name', None)
     if not employee_name:
         return redirect('employee_login')  # Redirect if not logged in
-    else:
-
-        tickets = ITSM_Ticket.objects.all().values('status')
     
-         # Create a DataFrame from the query results
-        df = pd.DataFrame(tickets)
+    # Ensure this query is inside the view function and not run during module import
+    tickets = ITSM_Ticket.objects.all().values('status')
+    
+    # Create a DataFrame from the query results
+    df = pd.DataFrame(tickets)
 
-        # Filter for the specific statuses 'Confirmed', 'New', 'In Progress'
-        filtered_df = df[df['status'].isin(['Confirmed', 'New', 'In Progress'])]
+    # Filter for the specific statuses 'Confirmed', 'New', 'In Progress'
+    filtered_df = df[df['status'].isin(['Confirmed', 'New', 'In Progress'])]
 
-        # Count the occurrences of each specific status
-        status_counts = filtered_df['status'].value_counts()
+    # Count the occurrences of each specific status
+    status_counts = filtered_df['status'].value_counts()
 
-     # Ensure we return the counts for all three statuses, even if some don't exist in the data
-        confirmed_count = status_counts.get('Confirmed', 0)
-        new_count = status_counts.get('New', 0)
-        in_progress_count = status_counts.get('In Progress', 0)
+    # Ensure we return the counts for all three statuses, even if some don't exist in the data
+    confirmed_count = status_counts.get('Confirmed', 0)
+    new_count = status_counts.get('New', 0)
+    in_progress_count = status_counts.get('In Progress', 0)
 
-        #encoded_image_sentiment=show_sentiment_plot(request)
-        encoded_image_status=plot_ticket_status_view(request)
-        encoded_image_priority =plot_ticket_priority_view(request)
-        encoded_image_category=plot_ticket_category_1_view(request)
-        encoded_image_category_status=plot_category_1_new_complaints_view(request)
+    encoded_image_status = plot_ticket_status_view(request)
+    encoded_image_priority = plot_ticket_priority_view(request)
+    encoded_image_category = plot_ticket_category_1_view(request)
+    encoded_image_category_status = plot_category_1_new_complaints_view(request)
 
-        context = {#pie_chart': encoded_image_sentiment, 
-               'status_plot':encoded_image_status ,
-               'priority_plot':encoded_image_priority,
-               'category_plot':encoded_image_category,
-               'category_status_plot':encoded_image_category_status,
-               'confirmed_count':confirmed_count,
-               'new_count':new_count,
-               'in_progress_count':in_progress_count,
-               'employee_name':employee_name
-              }
+    context = {
+        'status_plot': encoded_image_status,
+        'priority_plot': encoded_image_priority,
+        'category_plot': encoded_image_category,
+        'category_status_plot': encoded_image_category_status,
+        'confirmed_count': confirmed_count,
+        'new_count': new_count,
+        'in_progress_count': in_progress_count,
+        'employee_name': employee_name
+    }
 
-        return render(request, 'admin_dashboard.html', context)
-
-
+    return render(request, 'admin_dashboard.html', context)
 
 #===============================ADMIN===================================
 from django.shortcuts import render, redirect
