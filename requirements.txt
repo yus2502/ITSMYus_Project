@@ -8,4 +8,5 @@ kaleido==0.2.1
 gunicorn
 whitenoise
 django-debug-toolbar
+sentence_transformers
  
