@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url("{% static './static/images/janmlogin.webp' %}"); /* Path to the background image */
     background-size: 60%; /* Reduce background image size */
     background-position: center top; /* Adjust the background position */
     background-repeat: no-repeat;
