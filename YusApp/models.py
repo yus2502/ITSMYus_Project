@@ -38,9 +38,9 @@ class Complaint(models.Model):
     description = models.TextField()
     date_logged = models.DateTimeField(auto_now_add=True)
 
-def generate_ticket_id():
-    random_str = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
-    return timezone.now().strftime("%Y%m%d") + random_str
+# def generate_ticket_id():
+#     random_str = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+#     return timezone.now().strftime("%Y%m%d") + random_str
 
 class UserFeedback(models.Model):
     ticket_id = models.CharField(max_length=14) 
