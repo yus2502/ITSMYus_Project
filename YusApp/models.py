@@ -56,10 +56,6 @@ class UserFeedback(models.Model):
 # ===========================ADMIN============================================
 
 class Employee(models.Model):
-    pass
-
-
-class Employee(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     employee_id = models.CharField(max_length=10, unique=True)
