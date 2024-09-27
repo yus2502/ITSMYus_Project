@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Ticket Information</title>
+    {% load static %}
+    <style>
+        /* Body and layout styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #0066cc;
+        }
+
+        /* Form container styling */
+        form {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 500px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Input field styles */
+        label {
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        textarea:focus, select:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+
+        /* Button styles */
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        /* Logo positioning */
+        .logo {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 50px; /* Adjust the size of the logo if needed */
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Enter Ticket Information</h2>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+
+        <label for="category_1">Category 1 (Type of Complaint):</label><br>
+        <select id="category_1" name="category_1" required>
+            <option value="" disabled selected>Select Category 1</option>
+            {% for category in filtered_categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Submit</button>
+
+        <!-- Add the logo image here -->
+        <img src="{% static 'images/igfmas1.jpeg' %}" alt="IGFMAS Logo" class="logo">
+    </form>
+</body>
+</html>

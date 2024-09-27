@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("{% static './static/images/janmlogin.webp' %}"); /* Path to the background image */
+    background-size: 60%; /* Reduce background image size */
+    background-position: center top; /* Adjust the background position */
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-end; /* Align content to the bottom */
+}
+
+.container {
+    max-width: 400px; /* Smaller width for the container */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: absolute; /* Absolute positioning to place the form */
+    left: 10%; /* Move to the left */
+    bottom: 10%; /* Move up from the bottom */
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Button colors */
+.btn-orange {
+    background-color: #ff9800;
+}
+
+.btn-orange:hover {
+    background-color: #e68900;
+}
+
+/* Priority Colors */
+.priority-red {
+    color: red;
+}
+
+.priority-orange {
+    color: orange;
+}
+
+.priority-yellow {
+    color: yellow;
+}
+
+.priority-grey {
+    color: grey;
+}

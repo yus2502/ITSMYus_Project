@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Your Feedback</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        select, textarea, input[type="hidden"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #004080;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+        a {
+            color: #004080;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer-links a {
+    color: white;
+    background-color: #004080;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-links a:hover {
+    background-color: #0066cc;
+}
+
+.footer-links {
+    text-align: center;
+    margin-top: 20px;
+}
+.styled-select {
+    width: 100%; /* Full width to fit the container */
+    padding: 12px; /* Padding for space inside the dropdown */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    border: 2px solid #004080; /* Border color matching the theme */
+    font-size: 24px; /* Font size for readability */
+    color: #f75002 ; /* #333; Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.styled-select:hover {
+    background-color: #eef2f7; /* Slightly darker background on hover */
+    border-color: #0066cc; /* Darker border on hover */
+}
+
+.styled-select:focus {
+    outline: none; /* Remove default outline */
+    border-color: #e67e22; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(230, 126, 34, 0.5); /* Shadow effect on focus */
+}
+
+.styled-select option {
+    padding: 10px; /* Padding inside each option */
+    background-color: #fff; /* White background for dropdown options */
+}
+
+
+    </style>
+    <script>
+        // JavaScript function to show a popup alert
+        function showAlert(message) {
+            alert(message);
+        }
+
+        // Function to disable the submit button
+        function disableSubmitButton() {
+            document.getElementById("submitFeedbackButton").disabled = true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Submit Your Feedback</h1>
+
+    <div class="container">
+        <!-- Show the alert if a message is present -->
+        {% if message %}
+            <script>
+                showAlert("{{ message }}");
+            </script>
+        {% endif %}
+
+        <form method="post" onsubmit="disableSubmitButton()">
+            {% csrf_token %}
+            
+            <label for="rating">Helpfulness Rating:</label>
+            <select name="rating" id="rating" class="styled-select">
+                <option value="1">★☆☆☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="4">★★★★☆</option>
+                <option value="5">★★★★★</option>
+            </select>
+            
+
+            <label for="comment">Comment / Suggestion (optional):</label>
+            <textarea name="comment" id="comment" rows="4"></textarea>
+
+            <!-- Display the selected knowledge_article_id -->
+            <p><strong>Selected Knowledge Article ID:</strong> {{ knowledge_article_id }}</p>
+
+            <!-- Hidden inputs to include ticket_id and knowledge_article_id -->
+            <input type="hidden" name="ticket_id" value="{{ ticket_id }}">
+            <input type="hidden" name="knowledge_article_id" value="{{ knowledge_article_id }}">
+
+            <button type="submit" id="submitFeedbackButton">Submit Your Feedback</button>
+        </form>
+
+        <br>
+        <p>
+            <p class="footer-links">
+                <a href="{% url 'file_issue' %}">File Another Issue</a> | <a href="{% url 'home' %}">Back To Home</a>
+            </p>
+        </p>
+    </div>
+</body>
+</html>

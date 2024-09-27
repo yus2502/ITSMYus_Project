@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Result</title>
+    <style>
+        /* Priority color styles */
+        .priority-red { color: red; }
+        .priority-orange { color: orange; }
+        .priority-yellow { color: yellow; }
+        .priority-grey { color: grey; }
+
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Centered Box Styling for No Results */
+        .center-box {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        /* Wider Box for Results */
+        .result-box {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: calc(100% - 40px); /* Ensure small gap on left and right */
+            max-width: 1200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto; /* Margin at the top and bottom */
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            color: #0056b3;
+        }
+
+        td {
+            color: #555;
+            word-wrap: break-word;
+        }
+
+        /* Links */
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004da2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .result-box {
+                width: calc(100% - 20px); /* Smaller gap on small screens */
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    {% if filtered_results %}
+    <!-- Use wider box when results exist -->
+    <div class="result-box">
+        <h2>Recommendation Result</h2>
+
+        <!-- Display the generated Ticket ID -->
+        <p><strong>Ticket ID:</strong> {{ ticket_id }}</p>
+
+        <!-- Display the Predicted Priority with color coding -->
+        <p><strong>Predicted Priority:</strong> 
+            <span class="priority-{{ priority_color }}">{{ predicted_priority }}</span>
+        </p>
+
+        <!-- Display the filtered results in a table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Category 1</th>
+                    <th>Category 2</th>
+                    <th>Category 3</th>
+                    <th>Resolution</th>
+                    <th>Knowledge Article ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in filtered_results %}
+                <tr>
+                    <td>{{ result.description }}</td>
+                    <td>{{ result.category_1 }}</td>
+                    <td>{{ result.category_2 }}</td>
+                    <td>{{ result.category_3 }}</td>
+                    <td>{{ result.resolution }}</td>
+                    <td>{{ result.knowledge_article_id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Helpful Section -->
+        <form method="POST" action="{% url 'feedback_form' %}" id="feedbackForm">
+            {% csrf_token %}
+            <input type="hidden" name="ticket_id" value="{{ ticket_id }}">
+            <input type="hidden" name="selected_knowledge_article_id" id="selected_knowledge_article_id">
+
+            <p>Is it helpful?</p>
+            <input type="radio" name="helpful" value="yes" id="helpful_yes"> Yes
+            <select name="knowledge_article_id_dropdown" id="knowledge_article_id_dropdown" disabled>
+                <option value="">Select Knowledge Article ID</option>
+                {% for result in filtered_results %}
+                    <option value="{{ result.knowledge_article_id }}">{{ result.knowledge_article_id }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="radio" name="helpful" value="no" id="helpful_no"> No
+            <br><br>
+            <button type="submit" id="thanksButton">Thanks</button>
+        </form>
+    </div>
+    {% else %}
+    <!-- Use centered box when no results -->
+    <div class="center-box">
+        <h2>Recommendation Result</h2>
+
+        <!-- Display the generated Ticket ID -->
+        <p><strong>Ticket ID:</strong> {{ ticket_id }}</p>
+
+        <!-- Display the Predicted Priority with color coding -->
+        <p><strong>Predicted Priority:</strong> 
+            <span class="priority-{{ priority_color }}">{{ predicted_priority }}</span>
+        </p>
+
+        <p>No matching results found.</p>
+
+        <a href="{% url 'file_issue' %}">File Another Issue</a>
+        <a href="{% url 'home' %}">Go Back Home</a>
+    </div>
+    {% endif %}
+
+    <!-- Script to enable the dropdown when "Yes" is selected and handle form submission -->
+    <script>
+        let formSubmitted = false;
+        const helpfulYes = document.getElementById("helpful_yes");
+        const helpfulNo = document.getElementById("helpful_no");
+        const knowledgeArticleIDDropdown = document.getElementById("knowledge_article_id_dropdown");
+        const selectedKnowledgeArticleID = document.getElementById("selected_knowledge_article_id");
+        const form = document.getElementById("feedbackForm");
+
+        // Enable Knowledge Article ID dropdown when Yes is selected
+        helpfulYes.addEventListener('change', function() {
+            knowledgeArticleIDDropdown.disabled = false;
+        });
+
+        // Disable Knowledge Article ID dropdown when No is selected
+        helpfulNo.addEventListener('change', function() {
+            knowledgeArticleIDDropdown.disabled = true;
+            knowledgeArticleIDDropdown.value = ""; // Reset the dropdown value
+        });
+
+        // Validate the form before submission
+        document.getElementById("thanksButton").addEventListener("click", function(event) {
+            if (helpfulYes.checked && knowledgeArticleIDDropdown.value === "") {
+                event.preventDefault();
+                alert("Please select a Knowledge Article ID before submitting.");
+            } else if (!helpfulYes.checked && !helpfulNo.checked) {
+                event.preventDefault();
+                alert("Please select 'Yes' or 'No' before submitting.");
+            } else {
+                // Set the hidden input value to the selected knowledge_article_id
+                selectedKnowledgeArticleID.value = knowledgeArticleIDDropdown.value;
+                formSubmitted = true;
+            }
+        });
+
+        // Listen for attempts to close or leave the page
+        window.onbeforeunload = function(event) {
+            if (!formSubmitted) {
+                if (!helpfulYes.checked && !helpfulNo.checked) {
+                    const message = "Please select 'Yes' or 'No' before leaving!";
+                    event.preventDefault();
+                    event.returnValue = message; // This is needed for most modern browsers
+                    return message; // For older browsers
+                } else if (helpfulYes.checked && knowledgeArticleIDDropdown.value === "") {
+                    const message = "Please select a Knowledge Article ID before leaving!";
+                    event.preventDefault();
+                    event.returnValue = message;
+                    return message;
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>

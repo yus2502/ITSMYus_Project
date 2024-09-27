@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MYITSM</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            width: 900px; /* Make the container wider */
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #004080; /* Dark Blue Border */
+        }
+        .image-section {
+            width: 40%; /* Image section will take 40% of the width */
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%; /* Ensure the image covers the entire section */
+            border-radius: 8px 0 0 8px; /* Round the left corners */
+        }
+        .login-section {
+            width: 60%; /* Login section will take 60% of the width */
+            padding: 20px 40px; /* Add padding to prevent inputs from touching the edges */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .login-form {
+            width: 100%;
+        }
+
+        .login-form h2 {
+            color: #004080; /* Dark Blue */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            width: 100%; /* Take up full width */
+        }
+
+        .form-group label {
+            text-align: left;
+            margin-bottom: 5px; /* Spacing between label and input */
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-form button {
+            width: 100%; /* Button takes full width */
+            padding: 10px;
+            background-color: #007BFF; 
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #46b8da; /* Darker Light Blue */
+        }
+
+        .login-form .register-link {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .login-form .register-link a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        .login-form .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Position the image at the top right */
+        .jata-logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+        }
+
+        /* Position the IGFMAS logo at the bottom right */
+        .igfmas-logo {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+        }
+
+        /* Disclaimer styling */
+        .disclaimer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left section for image -->
+        <div class="image-section">
+            <img src="{% static 'images/Menatwork.png' %}" alt="Man at Work">
+        </div>
+
+        <!-- Right section for login form -->
+        <div class="login-section">
+            <!-- Jata Negara logo at the top right -->
+            <img src="{% static 'images/jatanegara.png' %}" alt="Jata Negara" class="jata-logo">
+
+            <div class="login-form">
+                <h2>ITSM AI Auto-Recommended Engine</h2>
+                {% if messages %}
+                    <div class="error-message">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <button type="submit">Log On</button>
+                    
+                    <div class="register-link">
+                        <a href="{% url 'register' %}">Register</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- IGFMAS logo at the bottom right -->
+            <img src="{% static 'images/igfmas1.jpeg' %}" alt="IGFMAS Logo" class="igfmas-logo">
+
+            <!-- Disclaimer at the bottom center -->
+            <div class="disclaimer">
+                AI prediction and recommendation might make mistake. Check important info.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

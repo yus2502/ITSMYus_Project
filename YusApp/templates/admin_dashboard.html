@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ITSM Helpdesk Status Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox to create side panel layout */
+        }
+
+        h1 {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            width: 100%;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            overflow: hidden; /* Ensures content stays within */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #004080;
+            color: white;
+            height: 100vh; /* Full height */
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: auto;
+        }
+
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: #ffdd57; /* Highlighted color for "Dashboard Options" */
+            font-size: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 12px;
+            margin: 8px 0;
+            background-color: #003366;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .sidebar ul li:hover {
+            background-color: hsla(215, 55%, 88%, 0.288);
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .logout {
+            background-color: #ff3333 !important; /* Highlight logout button */
+        }
+
+        .content {
+            margin-left: 270px; /* Leave space for sidebar */
+            padding: 20px;
+            width: calc(100% - 270px); /* Full width minus sidebar */
+        }
+
+        .chart-section {
+            margin-top: 20px;
+        }
+
+        .chart {
+            text-align: center;
+        }
+
+        .stylish-paragraph {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            color: #f003f8;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            border-left: 12px solid #004080;
+            border-right: 12px solid #004080;
+            padding: 15px 40px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            word-wrap: break-word;
+            text-align: center;
+            text-decoration: double;
+        }
+
+        .stylish-paragraph strong {
+            color: #004080;
+        }
+
+        .colored-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .colored-table th, .colored-table td {
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+        }
+        .column-1 {
+            background-color: #FF5733; /* Red */
+        }
+        .column-2 {
+            background-color: #33C1FF; /* Blue */
+        }
+        .column-3 {
+            background-color: #28A745; /* Green */
+        }
+        .column-4 {
+            background-color: #FFC107; /* Yellow */
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showChart(chartId) {
+            // Hide all charts
+            var charts = document.getElementsByClassName('chart-section');
+            for (var i = 0; i < charts.length; i++) {
+                charts[i].classList.add('hidden');
+            }
+
+            // Show the selected chart
+            document.getElementById(chartId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Side Panel -->
+    <div class="sidebar">
+        <h2>Hello, <strong>{{ employee_name }}</strong>!</h2>
+        <h3>Dashboard Options</h3>
+        <ul>
+            <li><a href="#" onclick="showChart('complaint-status')">Complaint by Status</a></li>
+            <li><a href="#" onclick="showChart('complaint-category')">Complaint by Category</a></li>
+            <li><a href="#" onclick="showChart('complaint-priority')">Complaint by Priority</a></li>
+            <li><a href="#" onclick="showChart('new-complaints-category')">New Complaints by Category</a></li>
+            <li><a href="#" onclick="showChart('helpfulness')">Helpfulness of Solutions</a></li>
+            <li class="logout"><a href="{% url 'employee_login' %}">LOGOUT</a></li> <!-- Added logout with a distinct style -->
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <h1>Complaint Handling System Dashboard</h1>
+        <h2></h2>
+        <!-- Always Visible Table -->
+        <table class="colored-table">
+            <tr>
+                <th class="column-1">New Registered Complains <br>{{ new_count }}</th>
+                <th class="column-2">In Process Complains :: <br> {{ in_progress_count }}</th>
+                <th class="column-3">Closed Complains :: <br> {{ confirmed_count }}</th>
+            </tr>
+        </table>
+
+        <!-- Complaint by Status -->
+        <div id="complaint-status" class="chart-section">
+            <p class="stylish-paragraph">Complaint Status</p>
+            <div class="chart">
+                {% if status_plot %}
+                    <img src="data:image/png;base64,{{ status_plot }}" alt="Complaint By Status">
+                {% else %}
+                    <div class="message">{{ message }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Complaint by Category -->
+        <div id="complaint-category" class="chart-section hidden">
+            <p class="stylish-paragraph">Complaint by Category</p>
+            <div class="chart">
+                {% if category_plot %}
+                    <img src="data:image/png;base64,{{ category_plot }}" alt="Complaint by Category">
+                {% else %}
+                    <div class="message">{{ message }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Complaint by Priority -->
+        <div id="complaint-priority" class="chart-section hidden">
+            <p class="stylish-paragraph">Complaint by Priority</p>
+            <div class="chart">
+                {% if priority_plot %}
+                    <img src="data:image/png;base64,{{ priority_plot }}" alt="Complaint by Priority">
+                {% else %}
+                    <div class="message">{{ message }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- New Complaints by Category -->
+        <div id="new-complaints-category" class="chart-section hidden">
+            <p class="stylish-paragraph">New Complaints by Category</p>
+            <div class="chart">
+                {% if category_status_plot %}
+                    <img src="data:image/png;base64,{{ category_status_plot }}" alt="New Complaints by Category">
+                {% else %}
+                    <div class="message">{{ message }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Helpfulness of Solutions -->
+        <div id="helpfulness" class="chart-section hidden">
+            <p class="stylish-paragraph">How Efficient is System in Providing Solutions?</p>
+            <div class="chart">
+                {% if pie_chart %}
+                    <img src="data:image/png;base64,{{ pie_chart }}" alt="Helpfulness Chart">
+                {% else %}
+                    <div class="message">{{ message }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

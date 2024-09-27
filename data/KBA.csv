@@ -1,0 +1,966 @@
+knowledge_article_id,description,module,keywords,category_1,category_2,category_3,issue,resolution
+400000000,Excess funds,CM,Fund,Application,SAPGUI - Cash Management,Bank,If AO has excess funds whether Bpopa will automatically transfer funds without AO needs to submit funds as now where AO will apply for excess funds through GFMAS.,"If AO has excess funds, automatic action will not occur in the 1GFMAS system.
+The process of transferring funds from AO to Ho through a transaction of funds from the Accounting Office (ZUCM206) can be done either by AO or BPOPA."
+400000001,PTJ has already had a float,CM,Panjar,Application,Panjar,Special Panjar,Whether the PTJ has a floating float needs the key to entering the Panjar or the HQ uploading from GFMAS to 1GFMAS.,PTJs who had the original float during the GFMAS system did not need to lock in the original float receipt to the 1GFMAS system.The float will be uploaded during the GFMAS migration process to 1GFMAS.
+400000002,Provider or supplier ID Panjar,CM,ID Panjar,Application,Master Data,Customer Information,Who will give or supply the Panjar ID.,"The BPOPA will supply the Panjar ID.The process of application can be referred to MPK - CM11.
+(The process of creating and the addition of a float of the"
+400000003,Powder,CM,Panjar,Application,Panjar,Retail Money Panjar,"Panjar Float - Is there a limit or not for the addition of a float amount?If anything, who will confirm the addition of the amount?For GFMAS, if there is an increase will include a letter of approval from the ministry.","Please refer to MPK-CM 11
+The process of creating and the addition of float floats."
+400000005,Maximum period for AO check process,AP,Check AO,Application,Payment command management,Report,"How long is the maximum for the user to ""check AO"" for the review process before being sent to 2?","For now, the SLA for the maximum period for users ""Check AO"" is still under discussion with Bpopp."
+400000006,Check Report/EFT Post Slip,AP,Check/EFT,Application,Payment command management,Report,Check/EFT Post Slip Post Report - At what stage can the report show?AO or PTJ?,At PTJ level.
+400000007,Deposit Refund,AP,Deposit,Application,Payment command management,Journal Vouchers,Is it allowed not to make a full payment of deposits in this process?,"The deposit may be paid part of the total deposit provided that the seizure of the deposit is part of the deposit.However, for the Regular Deposit Refund (Partial), this transaction cannot be made in the Deposit Refund Directive."
+400000008,Manual Provide Procedures,AP,Manual check,Application,SAPGUI - Payment Instructions,Check Management,Manual Provide Procedures,"Manual check preparation can only be done in certain circumstances as follows:
+1. Scenario A: Check failed by the Accounting Office (AO) due to the defective/non -functioning printer.
+2. Scenario B: Payment Instructions 80, but 1GFMAS access in AO has a disruption and the payment run process has not been implemented.
+3. Scenario C: 80 Unexpected Payment Instructions, 1GFMAS Access to Responsibility Center (PTJ) /AO suffers from system disruption.
+4. Scenario D: 1GFMAS does not work in PTJ and AO.
+
+Refer to MPK -AP 25 - Manual check preparation process
+Refer to AP -22104V Training Manual: Payment Process by Checkmanual"
+400000009,EFT number,AP,EFT,Application,SAPGUI - Payment Instructions,Check/EFT Payment Process,When will the EFT number be generated?,"EFT number is generated during the ZiAP512 process, which is during the EFT payment approval process."
+400000010,Supplier's Master Data,AP,Master Data,Application,Master Data,Supplier Information,Can the supplier's master data be created at 1GFMAS?,"Sure, through the gui sap.However, the process of creating supplier's master data is only given to BPOPA or BA/AO except for Account Group EMP, SUPP and Paye."
+400000011,Invoice function without PT (repeated),AP,Invoice without PT,Application,Payment command management,Report,What is the use of invoice without PT (repeat)?,To make it easier for users to use the same group of receipt information to enable payments to be made on a monthly or a period of time.
+400000012,Amount in the base data field,AP,Base data,Application,Payment command management,Payment Instructions Without Government Orders,Why does the system don't automatically calculate the basic data?,This is because the basic data concept is that the user needs to lock in all the basic data related to the invoice into the system including the amount information.
+400000013,The amount of check received through the mail exceeds the invoice,AR,Mail receipt,Application,Receipt,Mail Reception,The amount of check received through the mail exceeds the invoice.The message error Total RM exceeds the amount of invoice.,"The 1GFMAS system does not allow to lock in the check amount exceeding the invoice amount to ensure that the check received is fully accounted for.
+
+However, during the preparation of the receipt, the excess of the relevant amount can be accounted for as a previous receipt."
+400000015,Search Customer Information,AR,Search Customer Information,Application,Master Data,Customer Information,Customer Information: Search using name and no data generated.,The amendment of the sentence on the solution: the name field should use an aster (*) and it depends on how PTJ registers customer information whether capital or otherwise.
+400000016,EPF contributions and separate taxable income,HCM,KWSP,Application,SAPGUI - HCM,HCM-Payroll,Why is the EPF contribution and separate taxable income?,"Payment through the payment instruction is isolated to avoid the error of locking the payment for the purpose of contribution to the EPF, SOCSO contributions and tax payments to IRBM.BPTM AP received many complaints from the EPF that the EPF contribution could not be updated to the contributor account because the PTJ Incompatible/ Incomplete Information Information Key Information on the Payment Field for EPF contributions."
+400000017,Edit Report (ZRPY043) No IT0267 Data (Additional Off-Cycle Payments),HCM,HCM,Application,SAPGUI - HCM,HCM-Pay Report,Edit Report does not display data changes for IT0267 (Additional Off-Cycle Payments),"Data changes on infotype 0267 (additional off-cycle payments) are not considered in the IGFMAS Edit Report.Recommended after data update on batch through ZRPY068 or Level in PA30 (IT0267), AO needs to generate Query SQ01 (ZHRPY_IT0267 - Additional Off -Cycle Payments) to review the data that has been successfully uploaded/updated."
+400000029,Status for public air travel warrant (WPUA),MM,Public Air Travel Warrant (WPUA),Application,Procurement,Public Air Travel Warrant,"Public Air Travel Warrant (WPUA) - After status 80, how to monitor status whether or not you have made a payment.",The payment status of the WPUA can be viewed through the generated report (a detailed report of a complete government order).
+400000030,Public Air Travel Warrant Payment (WPUA),MM,Public Air Travel Warrant Payment (WPUA),Application,Procurement,Public Air Travel Warrant,Who will make payments for bulk air warrants?,Payment of bulk accounts will be made by the Accounting Office.
+400000031,Invoice Cancellation,MM,Cancel invoice,Application,Payment command management,Payment Instructions with Government Orders,Can an invoice that has passed canceled?,The invoice made by the 2 payment instructions cannot be canceled.
+400000032,SST USE (Letter of Acceptance),MM,(Letter of Acceptance) SST,Application,Master Data,Letter of Acceptance,What is the use of SST?,The use of SST within 1GFMAS is as a 'key' for the payment command scenario involving WPK and WJP.
+400000033,SST Review (Letter of Acceptance),MM,(Letter of Acceptance) SST,Application,Master Data,Letter of Acceptance,Does the system review for SST more than 4 months or more than 3 times payment?,System does not review for SST more than 4 months or more than 3 times payment
+400000034,Maintaining SST (Letter of Acceptance),MM/AP,(Letter of Acceptance) SST,Application,Master Data,Letter of Acceptance,Who keeps SST?,"For 1GFMAS, the system's SST number will be generated auto when the information is locked in the Master Data> Letter of Acceptance by the authorized user at PTJ respectively"
+400000035,SST Source (Letter of Acceptance),MM/AP,(Letter of Acceptance) SST,Application,Master Data,Letter of Acceptance,How much is SST resources?,2 sources.From EP and IGFMAS
+400000036,AKB MM period,MM,AKB MM,Application,Procurement,Acceptance of Supplies & Services,Is AKB still relevant in the accrual accounting environment?,AKB is still relevant as long as the budget uses cash basis.AKB at MM MM was only for a few days open by BPOPA in January before December the current year.
+400000037,GRN Requirements Before the Stop Instruction (SI) process,MM,STOP INSTRUCTION (SI),Application,Procurement,Instructions Reduction Quantity of Supplies,Why does SI NEED GRN,Using the same concept as the EP where some of the receipt of supplies and services have been accepted while avoiding the provider using SI to clear the original quantity of PO.
+400000038,The end of the end of the year (PAT),MM,PAT,Application,Procurement,The end of the year,When is the PAT time?,The PAT period is implemented in January of the New Year (as stated in the SPANM PAT).
+400000041,Process cancellation,AR,Receipt,Application,Receipt,Journal Voucher of Cancel Collector Statement,"The cancellation process, is the PTJ that canceling the cancellation process the same as PTJ which confirms the 60 status?","For the cancellation process, the PTJ which provides the document must cancel the document."
+400000042,Error Current PC00_M14_Calc or ZRPCSC000 - Gon,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),"Gon Continue If Data Is Complete
+This error message is currently only display in the old log.
+Please choose 'old log' and go to the end to display the error message.","No. No. is created with incomplete data.
+Please check:
+1. IT0001 - Organization Assignment
+2. IT0002 - Personal Data
+3. IT0007 - Working Time
+4. IT0008 - Basic Pay"
+400000043,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO11,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO11 functional area {e.g.0024021601} Belongs to B.area {e.g 1003},"Please check:
+1. Post a functional area on IT0001.
+2. Refer to TCODE KS03 (on ECP server) and enter the Functional Area code recorded in Step 1 in the Cost Center room.
+3. On the add.fields tab, please check the Accounting Office Field (AO).Make sure the BA code is the same as the BA code on IT0001 on HCP (PA20/PA30)"
+400000045,Error Current PC00_M14_Calc or ZRPCSC000 - ZGOn IT0027,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),"ZGOn check for IT0027
+This error message is currently only display in the old log.
+Please choose 'old log' and go to the end to display the error message.","Please check IT0027 - Cost Distribution.
+Make sure IT0027 has been created."
+400000046,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO1,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO1 retro-active not possible.,"Check IT0003 - Payroll Status, if Field Earliest Md Change <accounted to - means that there is a change in staff data (Payroll E.G IT0008) once the pay process has been completed and the post document has been sent to FICO.
+How to Correct:
+At PA30, to Utilities> Change Payroll Status, vacate Field Earliest Md Change."
+400000047,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO2 IT0006,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO2 check IT0006 not created.,Make sure IT0006 (Stype 1) is created.
+400000048,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO2 IT0006,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),Sgo2 check IT0006 subtype 1 not created.,Make sure IT0006 (Stype 1) is created.
+400000049,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO43 IT0009,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO3 payroll not possible because data is missing.Check IT0009: no record/s found.,Make sure IT0009 (Stype 0) is created.
+400000050,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO4 IT0185,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO4 Check IT0185: No Record/S Found.,"Make sure IT0185 (stype 01, 02, 03 or 90) is created."
+400000051,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO5 IT0077,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO5 check IT0077 payroll not possible because data is missing.Check IT0077: No record/s found.,"Keep IT0077 - Additional Personal Data created
+
+Pension Status (IT0077) Contributing to EPF (IT0196)
+1 -No pensioner and no EPF contribution - no betanda
+2 -Berpencen and No EPF Contribution - No Betanda
+3 -No pensioner and there is an EPF contribution - marked
+4 -Berpencen and there is an EPF contribution - marked
+5 -foreign workers and have EPF contributions - marked"
+400000052,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO5 IT0196,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),"ZGO5 check IT0196
+Payroll not possible because data is missing.Check It0198: No Record/S Found.","Keep IT0196 - EPF created
+
+Pension Status (IT0077) Contributing to EPF (IT0196)
+1 -No pensioner and no EPF contribution - no betanda
+2 -Berpencen and No EPF Contribution - No Betanda
+3 -No pensioner and there is an EPF contribution - marked
+4 -Berpencen and there is an EPF contribution - marked
+5 -foreign workers and have EPF contributions - marked"
+400000053,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO5 IT0196,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO5 check IT0196: Flag indicator is checked.,"This staff is in pension status (IT0077)
+1-No pensioner and no EPF contribution or
+2-Berpencen and No EPF Contribution
+Keep IT0196 - The 'Contributing To EPF' box is not marked"
+400000054,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO5 IT0196,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO5 check IT0196: Flag indicator is not checked.,"This staff is in pension status (IT0077)
+3-No pensioner and there is an EPF contribution or
+4-Berpencen and have an EPF contribution or
+5-foreign workers and have EPF contributions
+Keep IT0196 - The 'Contributing To EPF box is marked"
+400000055,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO5 IT0196,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO5 Check IT0196: Employer Amount/Percentage Not Equal to Zero.,"These staff are in pension standards = 4 (pension and have EPF contributions), voluntary contributions only for employee (employees).
+Make sure IT0196 - Employer (Amount/ Percentage) is emptied.
+Pension Status (IT0077) Contributing to EPF (IT0196)
+4 -Berpencen and have EPF contributions - marked & self contrbr"
+400000056,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO5 IT0198,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),"ZGO8
+Check It0198: No Record/S Found.",Make sure IT0198 Stype (01) is created.
+400000057,ERROR Current PC00_M14_Calc or ZRPCSC000 - ZGO5 IT0199 or IT0196,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),ZGO9 Check IT0199 or IT0196: Statutory Amount Larger Than Gross Pay.,"Total deduction (statutory) exceeds the total staff income.
+Please check:
+1. IT0199 (01 or 03) - Reduce or limit (delimit) Amount
+2. IT0196 (Employee Amount) - Reduce the amount"
+400000059,ERROR Current PC00_M14_Calc or ZRPCSC000 - PIT YPPF NOAB,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),"PIT YPPF Noab Determine Prorate Factor.
+Division by zero not performed
+Calculation rule yppf*/810 rte = tsdivi rte-tsdivp rte*kgenau rte/tsdivp addwt*","Please check:
+1. Make sure the data on IT0007 is correct.
+2. Make sure the data on IT0008 are correct.
+- Cap.util.lvl = 100.00
+- WKHRS/Period = 160.00 Monthly"
+400000061,Forgot the Portal 1GFMAS Portal Password,Authorization,Portal 1GFMAS Password,Authorization,Authorization,Manually reset the password,Users Forgot Portal 1GFMAS Portal Password,Users can solve the problem by referring to SOP: User Authentication Failed Password as in Appendix
+400000065,"What is the ""unit of measurement"" in the Master Data report ""?",MM,Item Code / Unit Measurement,Application,Master Data,Item Code,"What is the ""unit of measurement"" in the Master Data report ""?","The unit of measure of the item is based on the master data received from the ePerolehan.For example grams, kg,"
+400000066,Supplier Master Data Maintenance,MM/AP,Supplier's Master Data,Application,Master Data,Supplier Information,Where is the master data of the supplier maintained at 1GFMAS?,"Master data is maintained in Sap Gui.However the process for creating supplier's master data is only given to BPOPA or BA/AO except for Account Group EMP, SUPP and Paye."
+400000067,Cancel Public Air Travel Warrant (WPUA) Non -bulk,MM,Cancel a non -bulk air warrant,Application,Procurement,Public Air Travel Warrant,"If the ticket is out, the bill payment has been made, can the warrant cancel?","If the payment for the air warrant has been made by payment order with the order, it cannot be canceled."
+400000091,Authorization - Authorization Application,Authorization,Authorization - Authorization Application,Authorization,Authorization,Authorization Application,New Application or Update Related User Authorization (Authorization),"All new application forms or updates related to authorization (authorization) should be sent email or fax or hand or postage to Local Administration (LA) of the accounting office from January 26, 2018 to a later date.For your information, the use of 1GFMAS Service Desk for the purpose of new applications or user updates is temporarily postponed.Thank you."
+400000117,Checkbox AP58 (A),MM,AP58 (a),Application,Payment command management,Payment Instructions with Government Orders,When registering AP58 Payment Instructions (a) Is the AP58 (A) Auto Tick checkbox?,"Yes, the AP58 (A) checkbox will be in the auto tick for the circumstances where:
+
+AP58 Payment (A) With the receipt of supplies & services
+Po the year before,
+Grn the year before
+AP the current year
+Vot = b* (except B99) & t*
+
+Payment of AP58 (a) Involves Government Indent/Government Contract Liability/Wpua
+Po the year before,
+Date of completion / partial completion / service year before
+AP the current year
+Vot = b* (except B99) & t*"
+400000118,List of Accrual Account Code (CAA),MM,Account Code / Accrue List of Procurement,Application,Procurement,Government Order/ Government Contract,How to Search Account Code for a Procurement Register,"Users can search through Search Criteria: Personal Value Listkod during the list/update.In addition, the list of account codes can also be found on the JANM website and the Master Data report."
+400000119,EP & IGFMAS integration unsuccessful - Acceptance process in EP failed,MM,Item code,Application,Procurement,Acceptance of Supplies & Services,"EP & IGFMAS integration unsuccessful error '""item code xxxxxxx0000000000 is being processed","According to existing designs, the item code is only allowed by a user at a time.
+So the user has to try to re -deliver until successful"
+400000120,Payment instructions unsuccessful on the bread because the budget is insufficient or negative,MM,Annual Budget Excueded,Application,Payment command management,Payment Instructions with Government Orders,"Error 'Annual Budget Excueded by XXXXXX RM /
+'02] Failed to be processed due to current expenses exceeding the allocation of 9H/2021/S6341/41500700/E0211733/41500701/S63666667.Please take appropriate action including transfer of provisions if applicable.[Business Error] '",Consumers need to review the vot/fund report and ensure adequate/non -negative provisions and expenses do not exceed the provisions to make any transactions/posts.
+400000121,EP & IGFMAS integration unsuccessful - Payment match failed,MM,Budget negative,Application,Payment command management,Payment Instructions with Government Orders,Error 'Annual Budget Excueded by XXXXXXX RM (FM PB Availability Control),Consumers need to make additional or transfer of allocation up to at least 0.00.
+400000122,Payment instructions unsuccessful on the river,MM,Lock ID,Application,Payment command management,Payment Instructions with Government Orders,Error '12xxxxx document has been locked by ID xxxxxxxxxxxx' ID,The user needs to re -process the transactions made
+400000123,Payment instructions unsuccessful on the river,MM,Payment command document status is not updated on 80,Application,Payment command management,Payment Instructions with Government Orders,"Error '12xxxxx payment document (Local AP number) was successfully posted on XX.XX, XXXX (post date) by XXXXXXXXXXXX (User ID 2).Please click the Back button to exit the screen '",The user needs to click the 'Back' button.
+400000124,CANCELLATION OF ORDER/LIABILITY,MM,"CANCELLATION OF ORDER/LIABILITY
+(Balance Balance is not updated)",Application,Report,Vot/Fund Report,The liability is not returned after cancellation of the order/liability is made,Review detailed vot/fund reports based on the date the order document is set up.The canceled order/liability will display an amount of 0.00 in the dependency section.This indicates that the remaining liability has been returned to the original provision.
+400000125,Error PO EP document,MM,Error PO EP document,Application,Procurement,Government Order/ Government Contract,Error POXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx,The user needs to click the 'Kiri' button.
+400000126,Booking ID/ Booking ID,MM,MYGOM Portal Booking ID Process Procedure,Application,Procurement,Public Air Travel Warrant,MYGOM Portal Booking ID Process Procedure,"1. IGFMAS system login
+2. Click the Procurement Tab -> Public Air Travel Warrant -> Bulk -> Integration Update.
+3. In the Booking ID field Enter No PNR+Booking ID date is generated (without space/-).For example 5il5au18022022.
+4. Click the search button
+5. Click on the booking ID displayed in the search results room.
+6. If booking information is accurate, process as usual, save -> Send -> Pass -> Check AO."
+400000127,The use of account code,MM,Error Account Code,Application,Procurement,Government Indent/Government Contract Liability (Work),Account Code Error B0332XXX is not allowed for procurement,The cost of the repair does not meet the features to be capitalized as it should be charged to B0228000.The use of account code B0332XXX (e.g. Building repair) is not allowed to apply as much as the BPOPA instructions to restrict the use of this account code in the Procurement Module.Please refer to AO/BPOPA for any questions related to the code that can be used.
+400000128,Error Current Check Data Document Closing Year (PAT),MM,PAT Error,Application,Procurement,The end of the year,"Failed to prepare the end -of -year closing document (PAT).Once the document is underway, there is an error when you want to make the data check process.","The Rabax presented is due to the user ID of the Provider who performs the PAT process No Value Fik = FGOM in User Profile.
+Reporters should contact Local Admin to maintain FIK = FGOM at Provider ID and PAT Approval.
+Make sure the word ""FGOM"" is updated in a capital letter to prevent the same Rabax displayed."
+400000129,Closing,CM,Panjar,Application,Panjar,Retail Money Panjar,Error during the process of closing the tip where the user creates the original float receipt process.,"Users need to perform the Document Type KX transaction (payment instruction for the original float) with the same amount as the original float amount to the completion but approval from the BPOPA must be obtained in advance.
+
+The Process of Panjar should be completed in the following sequences:
+1. Original float voucher (KX)
+2. Close the Panjar (C5)
+3. Panjar Close Receipt (DZ)
+4. Panjar Closed Collector Statement (D0)"
+400000130,No information in the Reception Receipt Screen screen,CM,Panjar,Application,Panjar,Retail Money Panjar,"There is no reception receipt transaction in the screen of the Receipt Receipt of the reception due to the error during the recupment process.The reception should be done in the Panjar Module (C4), but is done in the AP (K4) module.","For cash received through the K4 recreation, the user must return the money to the Accounting Office Receipt Account.Actions to be taken:
+1. Make a regular receipt in Receipt Module
+2. Submit cash and collector statement to Accounting Office Receipt Account
+3. Users can continue to create a recreatal process (C4) in CM module as usual"
+400000131,ERROR Current PC00_M14_Calc or ZRPCSC000 - P0198,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),"P0198 Read Tax
+This error message is currently only display in the old log.
+Please choose 'old log' and go to the end to display the error message",Keep IT0198 created
+400000132,The reception of the original float,CM,Panjar,Application,Panjar,Retail Money Panjar,There is an error while locking in the PTJ Code (Old PTJ).,Prepare the S1 Journal Voucher to adjust the A2911101 account code to the actual PTJ and PTJ Code.
+400000133,Error Current PC00_M14_Calc or ZRPCSC000 - ZGOn IT0027,HCM,HCM,Application,SAPGUI - HCM,HCM-Payroll Run (Payroll Run),"ZGOn check for IT0027
+Payroll not possible because data is missing it0027","Please check IT0027 - Cost Distribution.
+Make sure IT0027 has been created or check records between IT0001 and IT0027.
+Make sure the number of records for both infotype for 'start date' and 'end date' is the same.If not, please update the record."
+400000134,Annual Salary Movement (PGT) ZRPY070,HCM,PGT,Application,SAPGUI - HCM,HCM-Pay Report,PGT Update cannot be generated,"The most common mistakes made by PTJ are not to generate PGT Calculation by actual run and when PTJ generates PGT updates, no data can be read by the program.Therefore, no spool can be generated.
+
+Please make sure the PGT Calculation button has been generated by actual run (after review during the test run run) before generating PGT updates.To avoid burdening the system at IGFMAS and allowing reviews on Display Own Jobs (SMX and SP02 transactions), the actual run process needs to be done in the background (Program Menu> Execute in Background).
+
+Here's the process description of the PGT program (ZRPY070):
+1. Jana PGT Calculation (Test Run)
+-> PTJ needs to review the generated list (identify new salary and new allowance is correct and identify no.
+-> Exclude No. (if any) to display the PGT report.
+
+2. Jana PGT Calculation (Actual Run) - Execute in Background
+-> The program will update the list of No. Seri, New Salary & New Allowances into the Program (Printed Report if necessary).
+
+3. JANA PGT UPDATE (TEST RUN)
+-> The program will read the data and display on the report for review purposes.
+
+4. JANA PGT UPDATE (Actual Run) - EXECUTE IN BACKGROUND
+-> Program will update new salary & new allowances on PA30 (reported report if necessary)."
+400000135,Transfer Process Out ZRPY033,HCM,"Transfer out,
+Move out",Application,SAPGUI - HCM,HCM-Pay Report,The transfer out process is not implemented properly using the ZRPY033 program.,"Please refer to IT0001 on the Transfer to Bus Area field.
+For the transfer process, the transfer to bus area, transfer to pay center and actual transfer date must be updated through the ZRPY033 program so that there is no error in the data.
+
+For the status of the action of the officer who has been inactive: Termination (T49), transfer to another agency (T45), CTG (T43) or Disciplinary Change (T44) and requires activation action, please contact BPTM HRPAY for further action advice."
+400000136,Do not have a vendor Employee in ECP,HCM,Employee Vendor,Application,SAPGUI - HCM,HCM-Master Data,Do not have a vendor Employee in ECP,"Please check:
+TCODE FK03 at ECP.Insert an 8 -digit no.Please make sure the Employee Vendor (50xxxxxxxx) still does not exist in the ECP.Take action to create an Employee Vendor by generating the ZRPY118 program at HCP using the Ad Hoc (Personnel No Only button).
+Please make sure the following are:
+1. Before implementing ZRPY118, make sure the start date is the new entry date for the staff;
+2. Check the error in the ZRPY118 Program Test Run Report;and
+3. Take the data correction action based on the test run error before re -implementing the zrpy118."
+400000137,EPF Calculation Different,HCM,KWSP,Application,SAPGUI - HCM,HCM-Master Data,Differences in the EPF amount calculation between months before and months after (Example: 10/2021 and 11/2021),"Please refer to Infotype 0196 and identify the records used.
+There is a difference in the EPF calculation between the statutory rate and the personnel rate.
+Statutory rate options, EPF amount based on a table gazetted by EPF.While the Personnel Rate option is based on the percentage (%) deduction."
+400000138,WBS Element XXXXXXXXXXXXXXXXXXXXXXXXXX does not exist in HCP,HCM,WBS Element,Application,SAPGUI - HCM,HCM-Master Data,WBS Element does not exist.,"If there is an error ""WBS Element XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1. Contact BPTM HRPAY for further review of the WBS code.
+2. BPTM HRPAY will make updates of WBS data through the ECP to HCP."
+400000139,Authorization Error Single HCM Transaction,HCM,HCM,Application,SAPGUI - HCM,HCM-Master Data,No Authorization,"If you have authorization access problems, please attach a SU53 screenshot for the Authorization Team Review.
+
+Here are some steps for SU53 screenshots.
+1. On a screen that has an error authorization, do not change the screen or create another process.Continue to step no.2 below.
+2. In the command field compartment on the same screen, enter /osu53 and click Enter.
+3. SCREEN SU53 will be displayed.Take a SU53 screenshot.
+4. Send it to the Authorization Team with the AO/ PTJ Officer ID and explain the problem encountered."
+400000140,Cancellation of the KEW.50E document skip the moon,CM,Panjar,Application,Panjar,Retail Money Panjar,The KEW.50E document that is the moon cannot be canceled.,"For the KEW.50E document the 80 status that wants to cancel is provided that it is within the same accounting month and the reception process has not been implemented.For KEW50.E documents with the 80-year-old Month, the user's action is to create other acceptance by locking in the same information as the KEW50.E document to be canceled.Users need to apply for the role of other acceptance through local admin (LA) officers in the user's department account section."
+400000141,Error on ZRPY121 Report - Payment Creation Remuneration,HCM,HCM,Application,SAPGUI - HCM,HCM-Pay Report,Error on ZRPY121 Report - Payment Creation Remuneration,"PCP0 Document has switched to 40 - Transferred Documents.However when referring to the Document GL, there is a ""no subsequencet document found in accounting"".
+
+1. Contact BPTM HRPAY for further review on IDOC at ECP (TCODE WE05).
+2. BPTM HRPAY will take action if the bus.Area is still 64 (yellow) - Push the IDOC Number manually through the TCODE BD87.
+3. BPTM HRPAY will review the TCODE We05 to ensure that the IDOC NUMBER has changed to status 53 (green) and informs users.
+4. AO Restore the ZRPY121 Program."
+400000142,Spick Code does not exist,CM,Spick code,Application,SAPGUI - Cash Management,Bank,The receipt cannot be generated because the spick code does not exist in the IGFMAS system.,"To create a spick code on IGFMAS, the user can contact the Panjar unit, bpopa by emailing the unitpanjar@anm.gov.my"
+400000143,Certificate exceeds 7 days for the process of transferring funds from Headquarters (HO),CM,Fund,Application,SAPGUI - Cash Management,Bank,Abap dump during the certificate process for more than 7 days.,Users need to gain access to the SM51 transaction code to enable user switch to the AAS4 server.Then the user can continue to approve the documents involved as the timeout of the AAS4 server is now between 10 minutes and 1.5 hours.
+400000144,Business Area & Functional Area Blank at User Profile SU3,CM,Panjar,Application,Panjar,Retail Money Panjar,Blank document log in the KEW.50E document.,It needs to update the user profile by filling out the Bussiness Area and Functional Area information.The workflow also needs to update the ZWFT001 table.
+400000145,Online Claims Application Not Found On The Claim Application Screen or Payment Instructions Preparation Screen from AP,GUMIS,A claim of GUMIS,Application,SAPGUI - GUMIS,Demand,The user does not find an online claim application on the Claim Application Screen or Payment Instructions/Kiri Preparation Screen from the AP.,Review the status of the online claim application can be made in advance on the quiri search screen (ZYGU304) and claim information information information (ZYGU308).
+400000146,The owner's information was not found when searching on the Claim Application Verification screen,GUMIS,A claim of GUMIS,Application,SAPGUI - GUMIS,Demand,The user does not find the owner's information when searching on the Claim Application Verification screen.,Review the status of the owner's information can be made first on the screen of the owner's information (ZYGU309).
+400000147,Error on the process of uploading files on the screen exists uma4 and uma3,GUMIS,GUMIS submission,Application,SAPGUI - GUMIS,Delivery,"The ""Invalid File Format"" Error exit when the user uploads the submission file from the entity on the screen exists UNTER4 and UNA3.",Users should advise the entity to confirm the upload confirmation using the WTD Submission Kit.
+400000148,Kuiri's letter was not found in Egumis for a claimed claim application,GUMIS,The claim of the GUMIS,Application,SAPGUI - GUMIS,Demand,Kuiri's letter is not available for online claim in Egumis.,The user must reprint the quiri letter on the quiri search screen (ZYGU304).
+400000160,Deposit Refund Instructions Error,AP,The work deposit,Application,Payment command management,Payment Instructions with Government Orders,Error during the Deposit Payment Payment Instructions Register,"Error display - '' Deposit refund is not allowed. Accounting Office is not the same '' at the List of Work Deposit Refund Instructions
+SOLUTION: Users need to make sure the locked receipts are simply 19 characters"
+400000161,WJP Payment Instruction Error,AP,WJP,Application,Payment command management,Payment Instructions with Government Orders,Chargeline Blank Error during WJP Payment Instructions Register,"Chargeline on the payment command is not withdrawn in case if no SST has no physical contract number
+Solution: Users need to update SST parent information with no physical contract"
+400000162,PKI Digital Signature,Authorization,PKI Digital Signature,Authorization,Authorization,Token/SSF ID/Digital Signature (GPKI),<Pki> CRL cannot be detected or invalid,"CRL Server needs to be updated as it has expired.
+Reporters are only informed by emailing networksecurity@anm.gov.my and authorization@anm.gov.my"
+400000163,PKI Digital Signature,Authorization,PKI Digital Signature,Authorization,Authorization,Token/SSF ID/Digital Signature (GPKI),<pki> Invalid digital signature.,"1. The digital certificate has expired and needs to be renewed at the GPKI Portal MAMPU.
+Or if the digital certificate is still valid it may be caused by
+2. Network signals (Network) Mega Disruption and users need to retry"
+400000164,PKI Digital Signature,Authorization,PKI Digital Signature,Authorization,Authorization,Token/SSF ID/Digital Signature (GPKI),GPKI System Technical Problems,"Users need to log a complaint through the GPKI Desk System (https://gpki.mampu.gov.my/gpki_portal)
+https://gpkidesk.mampu.gov.my/gpki_helpdesk_portal/home"
+400000165,Check the user's role -access information,Authorization,The accessibility of a user's role,Authorization,Authorization,Update Profile and Role/Workset/iView,Users can review the role and power limit through the portal reports,User Access Report and Power Limit on IGFMAS Portal
+400000166,Check the user's power limit,Authorization,Check the user's power limit,Authorization,Authorization,Changes of Power Limit Certify and Check,Users can review the role and power limit through the portal reports,User Access Report and Power Limit on IGFMAS Portal
+400000167,"Issue No Recipient, Once Documents Sent/Calculated",WF,No Erorr Document Recipient,Application,Workflow,Workflow Admin,Review at STH/Inbox found that documents were not in for a,"ZWA2/ZWA2A Report Run made by BPTM Workflow was found to have ERROR status> List of recipients is empty> Press PIE chart icon for authorization details> Puneman should submit authorization details information to LA/Authorization Team.Apply additional information from existing solutions included for
+Further actions:
+
+Financial Year:
+No PTJ Provides document:
+Document number:
+IC Officer Document:"
+400000168,Document Search Help,WF,DOCUMENTS NO IN STH / INBOX,Application,Workflow,Workflow - Others,Apply for Document Search Help under WF BPTM,WF BPTM> BPTM module to check table modules to obtain documents
+400000169,"Document issues still exist in STH/Inbox, although action has been taken (documents have been implemented at the last stage)",WF,DOCUMENTS NO IN STH / INBOX,Application,Workflow,Workflow Admin,"The review at STH/Inbox found that documents still exist, while the certification has been implemented","BPTM Workflow needs to complete the documents stuck at the final stage: Report zwa2/zwa2a> Check status status: Ready/started status> If Started Status> Click Swia icon> Click Replace Replace Manually> Status will switch to Ready> Click Set Workitem Icon Status> Convert Status to: Started + Agent ID Agent Apply for additional information from existing solutions included for
+Further actions:
+
+Financial Year:
+No PTJ Provides document:
+Document number:
+IC Officer Document:"
+400000170,E-Procurement Payment Document Document does not exist in sth,WF,"DOCUMENTS NO IN STH / INBOX
+Ep document",Application,Workflow,List of Daily Tasks (STH),E-Procurement Payment Document Document does not exist in sth,"Check Table ZWFT001> Check Document Status: Status 22/42 (Kuiri Process)> Inform the user that the document has been exposed, and does not exist in Sth Igfmas> Please check in e-Procurement"
+400000171,"Document issues do not exist in sth, for some of the squares",WF,DOCUMENTS NO IN STH / INBOX,Application,Workflow,Workflow Admin,"Review in Swia found that the document was opened by the Aunt A, resulting","The document has been accessed by the actor A causing the document to be locked from the access by another.To be allowed to reset by another.BPTM WorkFlow Action: Report ZWA2/ZWA2A> Check Record Status: Started Status> Click Swia icon> Click Replace Replace Manually> Status will switch to Ready> Documents will be re -evaporated for all recipients to apply for additional information from existing solutions included for
+Further actions:
+
+Financial Year:
+No PTJ Provides document:
+Document number:
+IC Officer Document:"
+400000172,A list of documents recipients,WF,A list of documents recipients,Application,Workflow,Workflow Admin,"The AA module applied for a list of documents, as it did not identify who the recipient of the PTJ was responsible for the document was generated by the PTJ",Report Report ZWA2/ZWA2A> Click Record to check the recipient> PTJ recipients list
+400000173,"Documents do not exist in STH, though WF has been on Trigger",WF,DOCUMENTS NO IN STH / INBOX,Application,Workflow,Workflow Admin,"Review on Table Module found Status has been 10 (send), but check on Table WF (ZWFT001) No record","Restart Document Tak Trigger WF: Check Table Module/ Table Zwft001> Table Module Status 10> Restart Manual TCODE Swus Apply Additional Information from Existing Solutions included for
+Further actions:
+
+Financial Year:
+No PTJ Provides document:
+Document number:
+IC Officer Document:"
+400000174,Information on Different Document Log Officer ID with an officer who approved,WF,Document Log ID,Application,Workflow,Workflow Admin,Information of the officer taking action by using another officer's computer,"a) Please use your own computer to avoid such things.
+b) If the officer's computer is damaged to require the use of another employee's computer, please clear the computer cache before using it."
+400000181,Error FM Account Assignment Cannot Be Budgeted in Budget Category 9F (General Warrant),FM,FM Account Assignment (General Warrant),Application,Warrant,Warrant,"Error FM Account Assignment Cannot Be Budgeted in Budget Category 9F (General Warrant)
+Example;
+No.001 FM Account Assignment B10/B6/30000/-/B10010200 Cannot be budgeted in budget category 9f",Check the general warrant at the ministry level whether or not it has been created.
+400000183,No GL Journal Voucher document is not generated auto,GL,No document is not generated,Application,Journal Vouchers,Journal Vouchers,No GL Journal Voucher document is not generated auto,"Review categories for PTJ & PTJ Groups Provide.If the PTJ & PTJ group prepared is from the manual category, the document number should be locked in by the user based on the Manual Journal voucher."
+400000184,Check the AO without a square i,GL,Journal vouchers,Application,Journal Vouchers,Journal Vouchers,Journal Vouchers are reviewed by AO without a paddy i,"Review categories for PTJ & PTJ Groups Provide.If the PTJ & PTJ group prepared is from the manual category, the verification action of the basin I is not required.The journal voucher document will continue to be sent for AO review."
+400000185,Error Control Account Code,GL,Journal vouchers,Application,Journal Vouchers,Journal Vouchers,"Error display ""Control Account Code XXXXXXXX is not allowed""","Check the account code using the FS00 transaction code (please contact the AO for review).
+The use of account code from the Recon Account category is not allowed."
+400000186,No Control Document,GL,Journal vouchers,Application,Journal Vouchers,Journal Vouchers,S2 Journal Voucher No No.Control document,"1. Review the status of the Journal voucher document involved.
+If it is still 40, the action is required.
+
+2. For Journal S2 vouchers, the last certificate will be determined by the PTJ & PTJ Group Code.
+- If the PTJ & PTJ group pay is from the manual category - the last quarter is a certificate II and the control document will be generated after the Certificate II action is implemented.
+- If the PTJ & PTJ group paid is from the electronic category - the last quarter is a declaration and the control document will be generated after the acceptance action is taken."
+400000187,Error of Budget Balance Report and Provision,FM,Budget Balance Report and Provision,Application,SAPGUI - GLFMCO,Report - Transaction,Report cannot be generated and occurred Time Out display,Consumers are advised to make a background for reports that failed to be generated
+400000188,Documents not found in the sth of the Violence,AA,Documents Update Asset Data Data Not Found In STH Verification,Application,Master Data,Assets - Update of Asset Master Data,The provider clicked the Save button but did not click the Send button when performing the asset data update process.Proposed Status of Asset Data Change Still 00.,Ask the provider to go to the Master Data menu> Assets> Proposed Change and Enter No.Updated assets and proceed with the process until clicking the Send button.
+400000189,Acquisition Value Negative in Area 01,AA,Acquisition Value Negative In Area 01 At the Asset Cost Reduction Adjustment Process,Application,Asset Accounting,Asset Cost Reduction Adjustment,The amount of the asset cost reduction adjustment is exceeded by the amount of the asset acquisition during the current year.,Asset cost reduction adjustments can only be made for the current year's acquisition amount.
+400000190,Documents not found in STH Officer,AA,Asset Accountingdocuments not found in STH Officer,Application,Asset Accounting,Others,The document has been sent to the approval Officer but does not exist in approved officer STH,"Review the authority limit/ approve the Officer.The confirmation/passing power limit is based on the amount of debit or credit for a document on the simulation screen.
+
+For bulk transaction documents, the authority limit/approval is based on the highest amount of debit or credit on the simulation screen between all documents in a bulk file."
+400000191,Journal voucher document is not generated,AA,Journal voucher document is not generated,Application,Asset Accounting,Others,Journal voucher document is not generated despite the actions of certification or acceptance.,Please ask the officer not to close the certificate screen.Wait until the document message is successfully approved before closing the screen.
+400000192,Clear Browser cache,Portal,Page Cannot Be Displayed,Application,Portal,Others,There was an error on the browser cache used,It is recommended for the users to clear the cache browser and restart the browser used.
+400000193,Pop-up blocker,Portal,Pop-up,Application,Portal,Others,There is a pop-up blocker in the browser used.,Closing a pop-up blocker in a used browser
+400000194,Sap gui for html failed,Portal,Sapgui for html,Application,Portal,Others,The SAP GUI for HTML error is displayed.,Arrange a browser settings to solve the problem
+400000195,Error Export to Excel,Portal,Excel,Application,Portal,Others,Error when to Export to Excel,Arrange a browser settings to solve the problem
+400000196,PDF issue,Portal,Pdf,Application,Portal,Others,PDF cannot be displayed on the portal,It is advisable for Uninstall Adobe Acrobat Reader and Re-Install again
+400000197,Cannot Connect to Provider,Portal,Cannot Connect to Provider,Application,Portal,Assignment - Daily Task List (STH),CANNOT CONNECT TO PROVIDER is displayed on STH,"There are several factors that cause this issue to occur and its solution:
+1. User locked and ask for authorization to check.
+2. Issues of basis"
+400000198,MTEN's report cannot be generated,BWBI,BW,Application,BWBI,Bex Analyzer,The report cannot be generated.Message 'A Critical Program Error Has Occurred.The program will now terminate 'is displayed.,Users need to update the existing version of the system to version 7.6.
+400000199,Different penny views in Trust Report,BWBI,BW,Application,BWBI,Bex Analyzer,Data in Report.There is a difference in sen views in the balance of the trust report with the data on the ECP.,Users need to update the existing version of the system to version 7.6.
+400000200,No period of existing parameters in Report A1,BWBI,BW,Application,BWBI,Crystal Report,There is no parameter period for the current month's choice as the option is only until January 2019.,"When this issue occurs, users will need to remove the previously prescribed setting section by:
+
+1. Press the All button to display the parameters of the month/year if this parameter is not displayed
+2. Press the Personalization icon next to New Value and click on Delete Personalization to remove Retired Rulers
+3. Monthly/Year parameters and current monthly selection are displayed"
+400000201,No option SP 4 for Cash CCC report parameters,BWBI,BW,Application,BWBI,Crystal Report,There is no selection of SP 4 parameters for the current year,"Users need to enter the full parameters manually on the month/year parameters with:
+
+1. Enter [0fiscper]. [K42022016] on the month/year parameters
+2. Press the Add button
+3. The Special Period parameters entered are displayed on Current Value
+4. Generate Report by clicking on Execute
+
+This issue will only be resurrected at the beginning of next year when users want to generate statements using SP 4 2022, but flat file data only until December 2022"
+400000202,The report could not be generated,BWBI,BW,Application,BWBI,Crystal Report,The report cannot be generated.Message 'The viewer could not process an event.The database logon information for this report is either income or incorrect.[] ---- ERROR CODE: [CRWEB00000119] 'is displayed.,"When this issue occurs, users need to clear the cache in the History Settings section on the browser used:
+
+1. Press the History button
+2. Click on Clear Browsing Data and select CLEAR DATA
+3. Login and re -generate statements"
+400000203,Cannot print,eApps,email,Application,eApps,eMail,Cannot print.,"Supplier information should be reviewed in the system by entering the number. INTRODUCTION CARD (INDIVIDUAL)/ COMPANY REGISTRATION NUMBER (Supplier) in the first field, and enter the account number or invoice number or payment reference number in the second field.
+
+If not in the system, a review should be made at the database.If the information is not available, further review should be made on the SAP portal whether the information has been submitted to it or not"
+400000204,No data was found in Embassin,eApps,email,Application,eApps,eMail,No data found,"Payment records are still in the process of scheduling.Please review within 3-5 business days of the Employment System or the AO/PTJ party may also refer to the IGFMAS FIAP portal for immediate information.In this regard, seek the cooperation of BPTM Eapps to obtain the relevant authority letter format for information generation at the IGFMAS portal."
+400000205,PTJ/AO User List (Accounting Office),Authorization,A list of users,Authorization,Authorization,List of Users,List of users according to PTJ/AO under the accounting office (AO) respectively,PTJ/AO can apply for a list of users via Local Admin (LA)
+400000206,Bank accounts are not in the supplier information,eApps,eVendor,Application,eApps,eVendor,Bank accounts are not in the supplier information,"For your information, the vendor branch information should only be filled if the vendor has a branch.If there are no branches, the vendor only needs to add bank information.
+
+In this case, we advise you to delete bank information and vendor branch information (if there are no branches), and regenerate bank information as headquarters.
+
+For more information, the AG Eapps Help Trees to explain in more detail about SOP for updating bank data at eVendor."
+400000207,Supplier data does not exist in eVendor,eApps,eVendor,Application,eApps,eVendor,Supplier data does not exist in eVendor,"Need to review at eVendor, if the provider's information is not available in eVendor, the provider will need to re -register at eVendor"
+400000208,Bank account updates are unsuccessful,eApps,eVendor,Application,eApps,eVendor,Bank account updates are unsuccessful,"Review should be made at eVendor, if no information is found, this is likely because the provider does not activate the account after 6 months of registered in eVendor.To your knowledge, the eVendor system will automatically deactivate the inactive supplier."
+400000209,"The bank account update is unsuccessful, there is an error",eApps,eVendor,Application,eApps,eVendor,"The bank account update is unsuccessful, there is an error","Review at eVendor found that supplier information was registered through Mass Upload Vendor.If you want to update the account bank, you will need to re -upload the file with the updated bank account number."
+400000210,Please review bank information,eApps,eVendor,Application,eApps,eVendor,Please review bank information,The review at eVendor found that the supplier was updated-3 (information failed to update by IGFMAS SAP) was due to this supplier in the ePerolehan system and was not allowed to continue any transactions or updates in the eVendor system.The contractor's tree is updating the bank information in the ePerolehan system.
+400000211,"Registration unsuccessful, exit 'username already exist' error",eApps,Update information,Application,eApps,eVendor,"Registration unsuccessful, exit 'username already exist' error","Our review at eVendor found that the supplier IC had been registered as a user ID (username) for other companies and caused the registration at eVendor to fail.
+
+Ask the supplier to update the user ID in addition to using IC."
+400000212,Supplier does not receive email ID and password after registering,eApps,Email information,Application,eApps,eVendor,Supplier does not receive email ID and password after registering,"The supplier's tree to reset the password following the issue is an email issue.
+
+The supplier is also checking the junk or spam folder."
+400000213,Unable to update information in the eVendor system,eApps,Update information,Application,eApps,eVendor,Unable to update information in the eVendor system,"Your company may have been registered with ePerolehan (scope of supply and service) before.For the purpose of updating information (bank account for work scope), the supplier is required to update the information in the ePerolehan system."
+400000214,E-vendor information problem overlapping,eApps,False registration,Application,eApps,eVendor,E-vendor information problem overlapping,Trees Enter a username or vendor ID that never exists in eVendor.
+400000215,Information to be submitted,eApps,Complaint information,Application,eApps,eVendor,What information should be presented when making complaints?,"Please submit a company name, company registration number, address, phone number and name of the payer or the name of the ministry or department you are committed, and then the complaint description."
+400000216,Egumis claim application problem,eApps,General information,Application,eApps,eGUMIS,Egumis claim application problem,"Students are unable to continue the claim are most likely due to, the student's application form has a drafting application.Where, the student had previously made a claim but the claim was only half way, causing the application to become a draft status.
+
+We would like to recommend the Work Around Solution as follows:
+
+The student's tree to clear the form of the draft claim by canceling the claim or continuing the claim until the completion.Then, then the system allows to make another application.This is due to, only one IC is allowed for each application.Students can review the status of the claim form in the Application List menu."
+400000217,Status does not change in Egumis,eApps,General information,Application,eApps,eGUMIS,"The ""new"" status in the egumis system has not changed even though the claim application has been completed","Our review found that we did not receive files from the Gumis.Therefore, the status of the application has not changed.Please review the SAP Gumis Portal."
+400000218,Claim application fall,eApps,General information,Application,eApps,eGUMIS,Students are unable to fall one claim application,"As a result of the simulation, we found that the egumis system had no problem dropping the application data.Students are unable to drop the data.
+
+We would like to recommend the Work Around Solution as follows:
+
+The student's tree to eliminate all of these claims first, and then be asked to regenerate the required applications only."
+400000219,Claim application has been completed manually,eApps,General information,Application,eApps,eGUMIS,Claim application has been completed manually without Kuiri Online,Apply for action from the user to complete the KUIRI (online claim) process until pass.
+400000220,Update the applicant's email,eApps,General information,Application,eApps,eGUMIS,Please update the student's email,"Any user email conversion is not an item that can be requested through Solman as it is not categorized as a system issue or problem.For your information, these users can re -register using the latest email in Egumis and start the claim process as usual.If the claim has been made earlier using the email, you may apply to the WebServices, BPTM for the purpose of changing the data or eliminating the application by non -Solman application through the Service Request."
+400000221,Excess of Invoice Amount in Receipt,AR,Invoice,Application,Receipt,Invoice,What should PTJ do if there is an excess of the amount of invoice to be resolved once the payment receipt is received from the customer?,"The steps that PTJ can take to resolve this issue is to create a Journal of Calculation (D9) on the invoice to be resolved.The PTJ is not recommended to establish a credit note, this is because the credit note is not a clearing of the invoice document even though the amount of the invoice has been RM0.00 and the invoice document will still open the item in the customers involved."
+400000222,Cash submission,AR,Cash submission,Application,Receipt,Cash Submission,Why is the 'Send' Dimmed button and can't take any action on the cash submission list?,"If the 'Send' Dimmed button, the PTJ should fill in the bill for the cash analysis in advance according to the cash received and press 'enter' after the field is filled.The 'Send' button will open after the cash amount and the amount at the same cash analysis.
+PTJ can also refer to the user manual available on the JANM Accrual Accounting Official Portal at https://www2.anm.gov.my/akruan"
+400000223,BJ DM Extra - Lumpsum Receipt (Subsequent Process: OTC Receipt Type),AR,DM additional,Application,Receipt,Journal Voucher Bounced Check,How To Do Subsequent Process Replacement Receipt For Scenario CTL Receipt Lumpsum Type of OTC Receipt,"The PTJ should do it on the Receipt Tab> List> Select the OTC Payer type.Then Key Enter No BJ DM in the ""RESEARCH NO. BJ DM"".BJ DM information will be displayed in the receipt charge section."
+400000224,PTJ Customer List,AR,PTJ Customer,Application,Receipt,Regular Receipts-OTC,"Why PTJ Customer Error PTJ ""Customer 10240101 is not defined in Company Code FGOM"".","In the event of this issue, the PTJ will need to sign up for PTJ customers first on the Master Data Tab> Customer Information before making an OTC receipt transaction."
+400000225,The receipt of the mail,AR,Mailing,Application,Receipt,Mail Reception,What to do if the user applies to cancel the mail register?,"Cancel mail can be done through a receipt list.The receipt provider must first take action, and then the mail provider can continue the Mel's cancel action at STH."
+400000226,Receipt Code,AR,Register the Code of Cover,Application,Master Data,Receipt Code,Why did the previous year's code not existed in the current year?,The coding code needs to be brought forward by taking action to take the forward process in the update code.
+400000227,The collector's statement,AR,List of Collector Statements,Application,Receipt,Auto Collector Statement,Why does the data error exist not when you want a collector's statement?,"The date in the collection period must be filled according to the receipt date and the correct payment method.During the AKB period, the collection period is according to the receipt date."
+400000228,The collector's statement,AR,List of Collector Statements,Application,Receipt,Online Collector Statement,Why does the data error exist not when you want a collector's statement?,"For the IDD receipt where the receipt date can be filled, the collection period is based on the receipt date."
+400000229,The collector's statement,AR,List of Collector Statements,Application,Receipt,Online Collector Statement,"The Online Collector Statement displays ""Data Data No"" when pressing the Jana button.","Need to review the status of the inbound/outbound file (AR902), it is likely that the files are sent and not processed in the IGFMAS system or the file is not sent to the IGFMAS system."
+400000230,Journal voucher Cancel receipt,AR,Journal Voucher Cancel Receipt,Application,Receipt,Journal Voucher Cancel Receipt,"Journal Voucher Cancel Receipt Displays ""Account A0122101 FGOM Is Currently Blocked by User XXXXXXXXXXXX (IC No)"" ""","This issue occurs when the system performance is slow and the account code A0122101 is shared by all PTJs
+Solution: Users can retry after a while.(when the IGFMAS system is stable)"
+400000231,Users with two roles (DISP & MAINT) for the same PTJ/KPTJ code,MyCost,The role of mycost module,Application,MyCost Portal,MyCost Portal,"Users with two roles (ZQ) (DISP & MAINT) for the same PTJ/KPTJ code will result in a data display or access to a Screen MyCOST module inaccurate/incorrect.
+Examples of users with two roles (ZQ) (DISP & MAINT) for the same PTJ/KPTJ code:
+Username: User Provider 09
+PTJ: 25020100
+Two Roles (ZQ): ZQ: MyCost-PTJ25020100-DISP
+ZQ: MyCost-PTJ25020100-Maint","Users need to select the role (ZQ) of the dispute or maintain the same PTJ/KPTJ code at a time.The change in role can be performed by their respective LA AO.
+Examples of users who have one role (ZQ) DISP or MAINT for the same PTJ/KPTJ code:
+Username: PBC PTJ Provider
+PTJ: 18011100
+One Role (ZQ): ZQ: MyCost-PTJ18011100-Maint"
+400000232,Transactions are not taken into account in the vot position report,FM,Vot position report,Application,Report,Vot Position Report,Transactions are not taken into account in the vot position report,"Make sure the transaction posts are not using the General Category Commitment item by checking on the FB03 transaction code (please contact the AO for further review).
+
+Vot position report will not display transactions using Commitment item from General category"
+400000233,Date of transaction post,AR,Post Date,Application,Receipt,Post Date,Post date does not need default to current date,"The post date for all transactions in the 1GFMAS system will default to the current date.This is because the system only allows the post on the current date except for certain transactions.
+(Examples of MDM transactions, AKB)"
+400000234,BJ DM Extra - Lumpsum Receipt (Subsequent Process: Common Type of Receipt),AR,DM additional,Application,Receipt,Journal Vouchers,How to do a subsequent process of replacement receipt for scenario CTL Receipt Lumpsum Type Receipt Type,PTJ needs to do so on the receipt tab.Sign up and then Lock No BJ DM in the charge line in column No.Document.As an alternative PTJ can click on the search box in column No.Document to find no BJ DM.
+400000235,BTC amount difference and amount of integration system,AR,IDD receipt,Application,Receipt,Report,Why is there an issue when the PTJ compares the receipt amount made for that date in the Integration System (IDD) and the amount uploaded at IGFMAS through the BTC report.,"Need to review the status of the inbound/outbound file (AR902), it is likely that the file sent has an error and is not processed in the IGFMAS system."
+400000236,BJ Adjustment DV (Radio Button 1 - Radio Button 5),AR,BJ Adjustment,Application,Receipt,DV Adjustment Journal Voucher,"Why the ""Inter AO is not allowed"" error appears when the BJ adjustment is made for Radio Button 1 - 4.","This control is made by the system to ensure that no inter-ba posts occur.In this regard, Inter BA is not allowed for Radio Button 1 - 4, only Inter Segment and Inter Fund are allowed."
+400000237,The collector's statement,AR,The collector's statement,Application,Receipt,The Collector's Statement,"Auto/Offline/Online Collector Statement displays ""Account A0122101 FGOM is Currently Blocked by User XXXXXXXXXXXX (IC No)""","This issue occurs when the system performance is slow and the account code A0122101 is shared by all PTJs
+Solution: Users can retry after a while.(when the IGFMAS system is stable)"
+400000238,Upload Program for Investment Data from Kwan for Report Purpose Only,TR,Kwan,Application,SAPGUI - Treasury Management,TR Investment,As a local reference for the latest upload template as the template is not stored at,"Mr/Mrs.
+The following is a list of templates for the National Trust Fund Investment Data Upload Program (ZUTR116) under the TR-UNV module
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000239,Dividend Distribution Distribution Template,TR,Upload dividend distribution,Application,SAPGUI - Treasury Management,TR-GSMIS,As a local reference for the latest upload template because the template is not stored on the program,"Mr/Mrs.
+The following is a template for the dividend distribution program (Zutr225) under the TR-GSMIS module
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000240,Template File for GSMIS Business Partner Upload Program,TR,Business Partner,Application,SAPGUI - Treasury Management,TR-GSMIS,As a local reference for the latest upload template because the template is not stored on the program,"Mr/Mrs.
+The following is a template for the GSMIS Business Partner (ZUTR220) Upload Upload Program under the TR-GSMIS module
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000241,Template File for GSMIS Security Incoming Program,TR,Securities Receipt,Application,SAPGUI - Treasury Management,TR-GSMIS,As a local reference for the latest upload template because the template is not stored on the program,"Mr/Mrs.
+The following is a template for the Security Incoming (Zutr221) upload program under the TR-GSMIS module
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000242,Template file for GSMIS Security ID Upload Program,TR,Securities ID,Application,SAPGUI - Treasury Management,TR-GSMIS,As a local reference for the latest upload template because the template is not stored on the program,"Mr/Mrs.
+The following is a template for the Security ID (Zutr222) upload program under the TR-GSMIS module
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000243,Template file for GSMIS Security Account Upload Program,TR,Securities Account,Application,SAPGUI - Treasury Management,TR-GSMIS,As a local reference for the latest upload template because the template is not stored on the program,"Mr/Mrs.
+The following is a template for the Security Account (Zutr223) upload program under the TR-GSMIS module
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000244,Template file for MDM Upload Upload Program Subsidiary Data,TR,MDM Master Data,Application,SAPGUI - Treasury Management,TR Module,As a local reference for the latest upload template because the template is not stored on the program,"Mr/Mrs.
+The following is a list of templates for the MDM Updating Master Data Sunsidiary (ZUMD507) program under the TR Module.
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000245,Template File for MDM Upload Program Updating GL Balance Transfer (TR),TR,MDM GL Balance,Application,SAPGUI - Treasury Management,TR Module,As a local reference for the latest upload template because the template is not stored on the program,"Mr/Mrs.
+The following is a list of templates for the MDM Updating GL Balance Transfer (TR) program (ZUMD506)
+
+
+Save this softcopy template for reference.
+
+So, please note.Thank you."
+400000246,Documents not found in the sth of the Violence,AA,Documents Update Asset Data Data Not Found In STH Verification,Application,Master Data,Assets - Update of Asset Master Data,Update of asset master data is implemented by providers at PTJ paying assets.,"The approval and approval process for updating the asset Master Data is under the responsibility of the PTJ asset.Please contact the officer at the PTJ responsible for the asset to proceed with the approval and approval process if the PTJ is responsible for the asset to agree to the update.If you do not agree, please ask the PTJ and the provider to be responsible for eliminating the update document of the asset data."
+400000247,Documents not found in STH Officer,AA,Asset Accountingdocuments not found in STH Officer,Application,Asset Accounting,Others,Documents have not been submitted to the Officer,Check the status of the document through the Journal Voucher Status Report.Go to the Asset Accountingmenu> Asset Report> Other Asset Reports> Journal Voucher Status Report.Take the next action.
+400000268,The collector's statement,AR,(AR) Receipt Account - List of Collector Statements,Application,Receipt,Auto Collector Statement,"When clicking the 'Jana' button, the receipt list does not come out.",Users need to press 'enter' on each field filled so that the receipt list will come out when generated.
+400000269,OL and CL,AR,(AR) Receipt Account - OL and CL,Application,SAPGUI - Custom Cash Ledger,Update Process,The issue of OL and CL amount is not the same because SK adjustments documents are only made on CL.,AO can determine the next step or refer to the BPOPA for further action.
+400000270,DV (FB05),AR,(AR) Receipt Account - DV (FB05),Application,SAPGUI - Receipt,Receipts - Other,Users make DVs using FB05.,Users are not allowed to use FB05.The BJ adjustment on the portal can be used and the user manual is available on the website www2.anm.gov.my.Please refer to AO/BA to get the user manual
+400000271,Receipt,AR,(AR) Receipt Account - Receipt,Application,Receipt,The Collector's Statement,Who runs the Treasury receipt.,"For agencies that integrate the collector statement (AR503), Treasury Receipt Information (AR506) will run according to JSM, TIME JOB will be determined by the Agency through the application."
+400000273,Cash Book Report (BTC),AR,(AR) Receipt Account - Cash Book Report (BTC),Application,Receipt,Report,Users are unable to generate a monthly cash book report for a month.,User data is very much.This causes the PDF format to not be generated as it has reached the smartform limitation.Users need to draw BTC reports on a weekly or shorter date and then make compilation manually for the month.
+400000310,Panjar - Panjar Certificate of Certificate,CM,Panjar Report,Application,Panjar,Panjar,There is an amount in the Certificate of Appendix I Certificate of Certificate of Certificate.,Check if the reception of rakupmen has been made?Appendix I displays the account that has been recorded to the AP but has not been locked in the reception.
+400000318,"Server Dev, PRD, DR  /home directory reach more than 95% of utilization. The system's functionality was significantly impacted, leading to this incident.",HDW,"Dev, PRD, DR  /home directory reach more than 95% of utilization",ICT,Hardware,Server pSeries,"Critical malfunction in Dev, PRD and DR server operations detected.","Analyze Disk Usage
+SSH into the Server where the /home directory is located using your preferred terminal or tool.
+
+ssh user@server-ip
+Check disk space usage for the /home directory.
+
+df -h /home
+Find large files and directories in the /home directory to identify where the space is being consumed.
+
+du -sh /home/* | sort -rh | head -10
+Step 2: Investigate and Remove Unnecessary Files
+Examine user home directories for old or unnecessary files, logs, or backups that can be deleted.
+
+Check for large media files, logs, backups, or unused software installers that can be archived or removed.
+
+find /home -type f -size +100M
+Delete or move files that are no longer needed. Be cautious when deleting, as you may need permission from users.
+
+rm /home/username/largefile.log
+Compress files that are large but still needed.
+
+gzip /home/username/largefile.log
+Step 3: Offload Files to External Storage
+Move large files to external storage or a different partition if the /home partition is small.
+
+For example, move files to /mnt/storage if available:
+mv /home/username/largefile.log /mnt/storage/
+Use cloud storage or network drives (like NFS) if you can’t expand local storage.
+
+Step 4: Clean Up Old Logs and Temporary Files
+Clean log files in user directories, if applicable. Logs from applications like web servers or databases might be consuming a lot of space.
+
+Empty or truncate log files:
+> /home/username/application.log
+Use automated cleanup tools such as tmpwatch or logrotate to keep log sizes in check.
+
+Configure logrotate for log files in /home that grow quickly:
+sudo logrotate /etc/logrotate.conf
+Step 5: Analyze User Quotas
+Check if users have exceeded their allocated disk quotas (if quotas are enabled).
+
+repquota -a
+Set or enforce user quotas to prevent individual users from consuming too much space in /home.
+
+edquota username
+Step 6: Monitor and Automate Disk Space Alerts
+Set up a monitoring tool like Nagios, Zabbix, or CloudWatch (for AWS servers) to monitor disk space utilization and receive alerts when usage exceeds a threshold (e.g., 80%).
+
+Schedule a periodic cleanup (like a cron job) to clear temporary or unimportant files automatically.
+
+Example of a cron job to delete old files older than 30 days:
+find /home/username/tmp -type f -mtime +30 -exec rm {} \;
+Step 7: Expand the File System (Optional)
+If disk space is a persistent issue, consider expanding the /home partition by:
+
+Adding more storage space to the server.
+Resizing or expanding the partition using tools like lvextend (for LVM partitions) or increasing the disk in the cloud provider (AWS, Azure, etc.).
+Example for extending LVM:
+
+lvextend -L +10G /dev/mapper/volumegroup-homelv
+resize2fs /dev/mapper/volumegroup-homelv
+Step 8: Final Check
+After taking action, verify that the /home directory utilization has been reduced.
+
+df -h /home
+Ensure that services are functioning normally and that no critical files were removed unintentionally."
+400000330, IGFMAS Access Application. The SAP system cannot be access.,NW,SAP system cannot be access,ICT ,Network,Network,IGFMAS Access Application can't be access,"Step 1: Check Network Connectivity
+Ensure the network connection is active:
+
+Check if your computer is connected to the correct network (Wi-Fi or LAN).
+Test connectivity by trying to access other websites or services.
+ping google.com
+Verify network latency and packet loss:
+
+Run a continuous ping to the SAP server (if you know the IP address).
+ping <SAP_server_IP_address>
+Look for high latency or packet loss. This might indicate network congestion or a faulty connection.
+Step 2: Check SAP Server Connectivity
+Ping the SAP server directly from your machine:
+
+ping <SAP_server_IP>
+If the ping is successful but you still cannot access SAP GUI, it may be an application-level issue.
+Check if the SAP Application Server is accessible:
+
+Use the telnet or nc command to test if you can reach the SAP server on the correct port (usually 3200 or 3600 for SAP GUI).
+telnet <SAP_server_IP> 3200
+or
+nc -zv <SAP_server_IP> 3200
+If this fails, the issue might be related to firewall rules or port blocking.
+
+Step 3: Check Firewall Settings
+Ensure the firewall on your local machine is not blocking SAP GUI access:
+
+Disable the firewall temporarily to see if it resolves the issue.
+For Windows:
+Open Control Panel ? Windows Defender Firewall ? Turn off Windows Defender Firewall for private and public networks.
+For Linux (if applicable):
+sudo ufw disable
+Check firewall settings on the network:
+
+Verify with your network administrator that the ports required by SAP (3200, 3600) are open between your machine and the SAP server.
+
+Step 4: Verify SAP GUI Configuration
+Check the SAP logon configuration:
+
+Open SAP GUI and verify that the correct application server, system number, and IP address are entered in the logon details.
+Ensure there are no misconfigurations in the SAP GUI logon pad. If there’s an incorrect configuration or network address, correct it based on the network team’s inputs.
+
+Step 5: DNS Issues
+Check if DNS resolution is working:
+If you're connecting to the SAP server using a hostname, ensure the DNS can resolve the hostname to the correct IP address.
+nslookup <SAP_server_hostname>
+If the hostname doesn’t resolve, update your hosts file or configure DNS properly.
+
+Step 6: Check for SAP System Outage or Maintenance
+Confirm that the SAP system is up:
+Ask your system administrator or SAP Basis team if the SAP system is down for maintenance, or if there’s an outage.
+Check for scheduled maintenance that might be affecting access.
+
+Step 7: Network Troubleshooting Tools
+Use traceroute or tracert to determine where the network connection is failing between your computer and the SAP server:
+
+On Linux/Mac:
+traceroute <SAP_server_IP>
+On Windows:
+tracert <SAP_server_IP>
+
+This will show where the connection drops, indicating if it’s a local network issue or a broader network issue.
+Check VPN connection (if applicable):
+
+If your network requires a VPN to access the SAP system, ensure that your VPN connection is active and stable. Reconnect to the VPN if necessary.
+
+Step 8: Check for Network Bandwidth Issues
+Monitor network bandwidth to ensure there is enough bandwidth for SAP GUI to function.
+Use tools like Task Manager (Windows) or iftop (Linux) to monitor network usage.
+
+Step 9: Restart Router and Switches (if applicable)
+Restart your local router or switch:
+Sometimes the issue can be resolved by rebooting the router or network switch to refresh the connection.
+
+Step 10: Contact IT Support
+If the issue persists, escalate the problem to your network administrators or SAP Basis team to further investigate potential routing, network hardware, or server-side issues."
+400000350,Cli* files in /tmp full. The system's functionality was significantly impacted.,BASIS,Cli* files,ICT,BASIS,SAP ECC,Cli* files in /tmp full,"Step 1: Check Disk Space Usage
+Login to the server where SAP ECC is running.
+
+ssh user@server-ip
+Check the usage of /tmp to confirm if it is full or nearing capacity.
+
+df -h /tmp
+List large files in the /tmp directory, especially Cli* files:
+ls -lh /tmp/Cli*
+
+Step 2: Identify and Understand the Files
+Check the purpose of the Cli* files:
+
+These files are typically temporary files created by SAP processes.
+It's important to check if the files are still in use before removing them.
+
+Check the age of the files:
+
+Older files are likely not in use and can be safely removed.
+find /tmp/Cli* -mtime +7
+
+This command will list files older than 7 days, which are likely safe to delete.
+
+Step 3: Stop Unnecessary SAP Processes
+Check if any SAP jobs or processes that generated these files are still running:
+Use the SAP management console to check running processes or SAP background jobs that might be generating temporary files.
+Stop long-running or stuck SAP processes (if they are responsible for the file buildup):
+Log into SAP and go to Transaction SM37 to check for long-running or failed background jobs.
+If required, terminate stuck processes to prevent further file creation.
+
+Step 4: Safely Delete Temporary Files
+Before deleting files, ensure they are not in use:
+
+Use the lsof command to check if any files are currently open or in use by a process.
+lsof | grep /tmp/Cli
+
+If no processes are using the files, they are safe to delete.
+Delete the Cli* files that are old and no longer needed:
+Start by removing files older than a certain number of days (e.g., 7 days):
+find /tmp/Cli* -mtime +7 -exec rm {} \;
+Alternatively, manually delete files:
+rm /tmp/Cli*
+
+Step 5: Monitor and Automate Cleanup
+Set up a cron job to automatically clean up old files in /tmp:
+This will help prevent /tmp from filling up again in the future.
+Example cron job to delete files older than 7 days:
+crontab -e
+Add the following line to the cron job file:
+0 2 * * * find /tmp/Cli* -mtime +7 -exec rm {} \;
+This will run daily at 2 AM and delete any Cli* files older than 7 days.
+
+Step 6: Increase /tmp Space (If Necessary)
+If /tmp frequently fills up, consider increasing the partition size or moving the temporary files to another directory:
+Resize the partition (if /tmp is a separate partition):
+For example, using Logical Volume Management (LVM):
+lvextend -L +5G /dev/mapper/volume-group-tmp
+resize2fs /dev/mapper/volume-group-tmp
+Reconfigure SAP to use a different directory for temporary files:
+You can modify the profile parameters to change the directory where SAP stores temporary files, such as /usr/sap/tmp.
+
+Step 7: Check SAP Configuration for Cleanup Jobs
+Configure SAP housekeeping jobs:
+SAP systems have predefined housekeeping jobs that clean up temporary files and logs. Ensure these jobs are scheduled properly.
+Go to Transaction SM36 to check if the housekeeping jobs like RSCOLL00 and RSBTOSM1 are scheduled.
+Review SAP parameters related to temporary file handling:
+Check if there are configuration parameters that control the creation and cleanup of temporary files.
+Parameters such as DIR_TEMP can be adjusted to ensure files are stored in an appropriate directory.
+
+Step 8: Recheck Disk Space
+Verify that disk space has been freed:
+df -h /tmp
+Ensure that there is now enough free space in the /tmp directory after deleting files.
+Check if SAP ECC processes are functioning normally after the cleanup.
+
+Step 9: Restart Services (if necessary)
+If the issue persists, restart SAP services or the server to refresh the system and clear out any lingering issues:
+Restarting SAP services:
+sapcontrol -nr <instance_number> -function Stop
+sapcontrol -nr <instance_number> -function Start"
+400000351,"The user is experiencing slow internet speeds on their laptop only when connected to the office Wi-Fi, affecting their ability to download large files.",NW,"slow internet, Wi-Fi, laptop, download speed",ICT,Network,Network,Slow internet speeds on office Wi-Fi affecting downloads.,"1. Verified the Wi-Fi signal strength near the user's workstation; found weak signal.
+2. Installed a Wi-Fi extender to boost the signal in the affected area.
+3. Updated the wireless network adapter driver on the user's laptop.
+4. Configured Quality of Service (QoS) on the router to prioritize file downloads.
+5. Tested download speeds post-fix; confirmed improved performance."
+400000352,"The user's desktop is unable to connect to the company VPN while working from home, with an error message stating 'Connection Timeout'.",NW,"VPN, connection timeout, remote work",ICT,Network,Network,Unable to connect to VPN from home due to 'Connection Timeout'.,"1. Checked the user's home network settings and found an outdated router firmware.
+2. Guided the user to update the router firmware to the latest version.
+3. Reconfigured the VPN client with the updated server address.
+4. Added the VPN server to the router's firewall whitelist.
+5. Successfully connected to the VPN after troubleshooting."
+400000353,"Office Wi-Fi network is slow during peak hours, making it difficult for employees to access cloud applications.",NW,"Wi-Fi, slow network, peak hours, cloud applications",ICT,Network,Network,"Office Wi-Fi slow during peak hours, affecting cloud application access.","1. Monitored network traffic during peak hours; found excessive bandwidth usage.
+2. Enabled Quality of Service (QoS) on the router to prioritize cloud application traffic.
+3. Added a secondary access point to reduce congestion on the main Wi-Fi network.
+4. Scheduled large data backups to occur outside of peak hours.
+5. Tested network speed during peak hours; confirmed improved performance."
+400000354,"The network printer is not responding to print jobs and shows 'Offline' status, despite being powered on.",NW,"network printer, offline, print jobs, not responding",ICT,Network,Network,Network printer shows 'Offline' and does not respond to print jobs.,"1. Verified the printer's network connection; found IP address conflict.
+2. Assigned a new static IP address to the printer.
+3. Updated the printer driver on the user's computer.
+4. Restarted the print spooler service on the network server.
+5. Successfully sent a test print job; confirmed the printer is now online."
+400000355,User reports frequent Wi-Fi disconnections on their mobile device when moving between office floors.,NW,"Wi-Fi disconnections, mobile device, office floors",ICT,Network,Network,Frequent Wi-Fi disconnections on mobile devices between office floors.,"1. Analyzed Wi-Fi signal coverage on each floor using a Wi-Fi analyzer tool.
+2. Found dead zones with weak signals due to insufficient access point coverage.
+3. Installed additional access points to ensure seamless coverage across floors.
+4. Configured the Wi-Fi network for smooth roaming between access points.
+5. Tested connectivity while moving between floors; the issue was resolved."
+400000356,"The user's computer frequently disconnects from the corporate Wi-Fi network, disrupting access to shared resources.",NW,"Wi-Fi, disconnections, shared resources",ICT,Network,Network,Frequent disconnections from the corporate Wi-Fi network.,"1. Analyzed the Wi-Fi logs and identified excessive interference from nearby networks.
+2. Changed the Wi-Fi channel to a less congested one in the router settings.
+3. Updated the computer's Wi-Fi adapter drivers.
+4. Increased the DHCP lease time to maintain stable connections.
+5. Tested the connection stability; confirmed consistent access to shared resources."
+400000357,Users in a specific office area report that their devices are unable to connect to the network printer wirelessly.,NW,"network printer, wireless connection, office area",ICT,Network,Network,Inability to connect to the network printer wirelessly in a specific area.,"1. Checked the printer's Wi-Fi signal strength in the affected area; found weak signal coverage.
+2. Relocated the network printer to a more central position to improve coverage.
+3. Added a Wi-Fi extender to enhance the network signal in the specific office area.
+4. Configured the printer's wireless settings to use a dedicated channel.
+5. Successfully connected and printed from devices in the affected area."
+400000358,"The office VPN frequently disconnects, causing users to lose access to remote resources intermittently",NW,"VPN, frequent disconnects, remote access",ICT,Network,Network,Frequent VPN disconnections causing intermittent remote access loss.,"1. Monitored the VPN logs; found inconsistencies in the network connection.
+2. Increased the VPN client timeout settings to prevent premature disconnections.
+3. Updated the VPN server firmware to the latest version.
+4. Enabled split tunneling to reduce network congestion on the VPN.
+5. Verified that the VPN connection remained stable during remote access."
+400000359,"Employees report slow internet browsing speeds in the conference rooms, affecting video calls.",NW,"slow internet, conference rooms, video calls",ICT,Network,Network,Slow internet browsing speeds in conference rooms affecting video calls.,"1. Analyzed network traffic during video calls; found bandwidth saturation.
+2. Set up a dedicated Wi-Fi network for conference rooms with a higher bandwidth allocation.
+3. Implemented Quality of Service (QoS) to prioritize video call traffic.
+4. Installed additional access points to improve Wi-Fi coverage in the conference rooms.
+5. Tested video call quality; confirmed improved browsing and call stability."
+400000360,The office firewall blocks access to a cloud-based application required for daily operations.,NW,"firewall, cloud-based application, blocked access",ICT,Network,Network,Office firewall blocks access to a necessary cloud-based application.,"1. Reviewed the firewall rules and identified the blocked application.
+2. Added the cloud application's IP range to the firewall's whitelist.
+3. Enabled secure HTTPS traffic for the cloud application in the firewall settings.
+4. Implemented an exception rule to allow the application through the firewall.
+5. Verified that users could access the application without interruption."
+400000361,The office's wireless network is not visible on employees' laptops after a recent network maintenance.,NW,"wireless network, not visible, network maintenance",ICT,Network,Network,Wireless network not visible on laptops after network maintenance.,"1. Checked the Wi-Fi network settings on the access points; found the SSID set to 'hidden'.
+2. Enabled SSID broadcasting on all access points.
+3. Verified that the network security settings were correctly configured.
+4. Restarted the access points to apply the changes.
+5. Confirmed that the wireless network was visible and accessible on employees' laptops."
+400000362,"The guest Wi-Fi network is significantly slower than the main office network, causing issues for visitors accessing the internet.",NW,"guest Wi-Fi, slow network, internet access",ICT,Network,Network,Guest Wi-Fi network is significantly slower than the main office network.,"1. Analyzed the network traffic on the guest Wi-Fi; found excessive bandwidth usage by a few devices.
+2. Implemented bandwidth throttling on the guest network to ensure fair usage.
+3. Updated the access point firmware to the latest version for better performance.
+4. Separated the guest Wi-Fi onto a different VLAN to reduce network congestion.
+5. Tested the guest Wi-Fi speed; confirmed improved performance."
+400000363,Users report that they are unable to connect to the company's VPN when using public Wi-Fi networks.,NW,"VPN, public Wi-Fi, connection issues",ICT,Network,Network,Unable to connect to VPN when using public Wi-Fi networks.,"1. Reviewed the VPN client configuration; found incorrect network settings for public Wi-Fi.
+2. Configured the VPN client to use an alternative connection protocol (e.g., SSTP) suitable for public networks.
+3. Updated the VPN client software to the latest version for compatibility.
+4. Instructed users on how to establish a secure connection when using public Wi-Fi.
+5. Tested the VPN connection on a public Wi-Fi network; confirmed successful access."
+400000364,The office Wi-Fi network is experiencing frequent 'Authentication Failed' errors when employees try to connect.,NW,"Wi-Fi, authentication failed, connection issues",ICT,Network,Network,Frequent 'Authentication Failed' errors on office Wi-Fi network.,"1. Checked the access points' RADIUS server configuration; found outdated security certificates.
+2. Updated the security certificates on the RADIUS server to ensure proper authentication.
+3. Ensured that the Wi-Fi network settings on all devices matched the updated security protocols.
+4. Restarted the RADIUS server and access points to apply the changes.
+5. Verified that employees could connect to the Wi-Fi without authentication errors."
+400000365,"The network printer is intermittently unavailable, showing as 'Offline' in the print queue on users' computers.",NW,"network printer, offline, print queue",ICT,Network,Network,Network printer intermittently unavailable; shows as 'Offline'.,"1. Checked the network printer's IP address; found an IP conflict with another device.
+2. Assigned a static IP address to the printer to prevent future conflicts.
+3. Updated the printer driver on all affected users' computers.
+4. Restarted the print spooler service on the print server.
+5. Tested printing from multiple computers; confirmed the printer remained online."
+400000366,"The office network experiences high latency and packet loss during video conferences, leading to poor call quality.",NW,"high latency, packet loss, video conferences",ICT,Network,Network,High latency and packet loss during video conferences.,"1. Monitored the network traffic during video conferences; identified high bandwidth usage from file transfers.
+2. Implemented Quality of Service (QoS) policies to prioritize video conference traffic.
+3. Updated the network router firmware to address known latency issues.
+4. Added a secondary internet connection for load balancing and improved performance.
+5. Tested the video conference call quality; confirmed reduced latency and packet loss."
+400000367,"Certain websites are not accessible on the office network, with users receiving 'Connection Timed Out' errors.",NW,"websites, connection timed out, office network",ICT,Network,Network,Certain websites not accessible on the office network; 'Connection Timed Out'.,"1. Checked the firewall settings; found that the content filtering policy was too restrictive.
+2. Whitelisted the affected websites in the firewall's content filtering rules.
+3. Updated the DNS server settings on the office network for improved resolution.
+4. Restarted the firewall and network devices to apply the new rules.
+5. Verified that the previously blocked websites were now accessible without errors."
+400000368,"Employees report that the office Wi-Fi network frequently switches between different access points, causing temporary disconnections.",NW,"Wi-Fi, switching access points, temporary disconnections",ICT,Network,Network,"Office Wi-Fi network frequently switches access points, causing disconnections.","1. Analyzed the Wi-Fi network configuration; found that the access points were not properly calibrated for roaming.
+2. Adjusted the signal strength and channel settings on the access points to minimize overlap.
+3. Enabled seamless roaming (802.11r) on the Wi-Fi network to allow smoother transitions between access points.
+4. Updated the firmware on all access points to the latest version.
+5. Tested Wi-Fi roaming throughout the office; confirmed stable connectivity without disconnections."
+400000369,The guest Wi-Fi network is not redirecting users to the captive portal for authentication.,NW,"guest Wi-Fi, captive portal, authentication",ICT,Network,Network,Guest Wi-Fi network not redirecting to the captive portal.,"1. Checked the Wi-Fi controller settings; found the captive portal feature disabled.
+2. Enabled the captive portal feature and configured the landing page.
+3. Tested the redirection process; still not working.
+4. Rebooted the Wi-Fi controller and verified the network settings.
+5. Confirmed successful redirection to the captive portal for user authentication."
+400000370,The network switch in the server room is unresponsive and causing connectivity issues across multiple departments.,NW,"network switch, unresponsive, connectivity issues",ICT,Network,Network,"Network switch unresponsive, causing connectivity issues across departments.","1. Accessed the network switch through the management console; found it unresponsive.
+2. Power-cycled the switch to reset its internal processes.
+3. Updated the switch firmware to the latest version to fix known bugs.
+4. Monitored the switch post-restart to ensure stability.
+5. Verified network connectivity across departments; confirmed the issue was resolved."
+400000371,"User's laptop battery drains rapidly, even when fully charged, causing the laptop to shut down unexpectedly during use.",HDW,"laptop battery, rapid drain, unexpected shutdown",ICT,Hardware,Battery,"Laptop battery drains quickly, causing unexpected shutdowns.","1. Checked the battery health status through the operating system; found it degraded.
+2. Ordered and replaced the battery with a new, compatible one.
+3. Updated the power management settings to optimize battery usage.
+4. Ran a full charge and discharge cycle to calibrate the new battery.
+5. Observed improved battery performance; the issue was resolved."
+400000372,"The office printer is printing blank pages, even though the ink cartridges are full and correctly installed.",HDW,"printer, blank pages, ink cartridges",ICT,Hardware,Printer,Printer outputs blank pages despite full ink cartridges.,"1. Checked the printer's nozzles and performed a nozzle cleaning procedure.
+2. Verified the cartridge installation; found no issues.
+3. Ran the printer's internal diagnostics tool to identify any errors.
+4. Reset the printer's settings to factory defaults.
+5. Printed a test page; confirmed normal printing resumed."
+400000373,"The user's desktop fails to boot up, showing a 'No Boot Device Found' error message on startup.",HDW,"desktop, no boot device, startup error",ICT,Hardware,Boot Issue,Desktop fails to boot with 'No Boot Device Found' error.,"1. Checked BIOS settings and ensured the primary hard drive was set as the boot device.
+2. Opened the case and checked the hard drive connections; found a loose SATA cable.
+3. Reconnected the SATA cable securely.
+4. Performed a diagnostic test on the hard drive; found no hardware issues.
+5. Restarted the system; the desktop booted successfully."
+400000374,"The user's monitor displays a 'No Signal' message intermittently, especially when switching between applications.",HDW,"monitor, no signal, intermittent display",ICT,Hardware,Monitor,Monitor displays 'No Signal' intermittently when switching applications.,"1. Checked the monitor cable connections; found a loose HDMI cable.
+2. Replaced the HDMI cable with a new one to ensure a secure connection.
+3. Updated the graphics driver on the user's computer.
+4. Adjusted the monitor's refresh rate to match the graphics card output.
+5. Observed the monitor; the intermittent 'No Signal' issue was resolved."
+400000375,User reports that the desktop computer overheats and shuts down during intensive tasks like video editing.,HDW,"desktop overheating, shutdown, intensive tasks",ICT,Hardware,Overheating,Desktop computer overheats and shuts down during intensive tasks.,"1. Opened the computer case and inspected the cooling fans; found significant dust buildup.
+2. Cleaned the dust from the fans and heat sinks using compressed air.
+3. Reapplied thermal paste to the CPU to improve heat dissipation.
+4. Installed an additional cooling fan to enhance airflow.
+5. Monitored the system temperature during intensive tasks; the overheating issue was resolved."
+400000376,"The external USB hard drive is not recognized by the user's laptop, and no error message is displayed.",HDW,"USB hard drive, not recognized, no error",ICT,Hardware,Storage,External USB hard drive not recognized by the laptop.,"1. Tried connecting the hard drive to a different USB port; still not recognized.
+2. Connected the drive to another computer; the drive worked fine.
+3. Updated the laptop's USB controller drivers to the latest version.
+4. Used Disk Management to assign a drive letter to the external hard drive.
+5. Verified that the hard drive was now accessible on the user's laptop."
+400000377,"User's laptop keyboard is not responding when typing certain keys, making it difficult to complete work tasks.",HDW,"laptop keyboard, not responding, typing issues",ICT,Hardware,Keyboard,Laptop keyboard not responding for certain keys.,"1. Checked the laptop's keyboard settings; found no software issues.
+2. Connected an external keyboard to verify functionality; external keyboard worked fine.
+3. Replaced the laptop's internal keyboard with a new one.
+4. Verified that the new keyboard was detected by the operating system.
+5. Tested typing on the new keyboard; confirmed full functionality."
+400000378,"The user's desktop computer is making loud, unusual noises when powered on, indicating potential hardware failure.",HDW,"desktop computer, unusual noises, hardware failure",ICT,Hardware,Fan,Desktop computer making loud noises on startup.,"1. Opened the computer case and identified the source of the noise as a faulty cooling fan.
+2. Removed the faulty fan and cleaned the surrounding area.
+3. Installed a new cooling fan compatible with the desktop model.
+4. Ensured proper cable management to avoid future issues.
+5. Powered on the computer; the noise was eliminated."
+400000379,"The office's network-attached storage (NAS) device is not accessible over the network, showing 'Connection Refused' error.",HDW,"NAS device, network access, connection refused",ICT,Hardware,Storage,NAS device not accessible over the network; 'Connection Refused'.,"1. Checked the NAS device's network cable connection; found a faulty cable.
+2. Replaced the network cable with a new one.
+3. Restarted the NAS device and verified the network settings.
+4. Updated the NAS firmware to ensure network compatibility.
+5. Accessed the NAS device over the network; confirmed that it was accessible without errors."
+400000381,The office projector is not displaying any image when connected to a laptop via HDMI cable.,HDW,"projector, no display, HDMI connection",ICT,Hardware,Projector,Office projector not displaying image via HDMI.,"1. Verified the projector's input source settings; set to HDMI.
+2. Checked the HDMI cable for damage; replaced with a new cable.
+3. Updated the laptop's graphics driver to support external displays.
+4. Adjusted the display settings on the laptop to extend the screen to the projector.
+5. Confirmed the projector displayed the laptop screen correctly."
+400000382,"The user's desktop frequently crashes with a 'Blue Screen of Death' error, suggesting hardware instability.",HDW,"desktop crashes, Blue Screen of Death, hardware instability",ICT,Hardware,RAM,Desktop frequently crashes with Blue Screen of Death.,"1. Analyzed the crash logs and identified memory errors.
+2. Opened the computer case and reseated the RAM modules.
+3. Ran a memory diagnostic tool to check for faulty RAM.
+4. Replaced the faulty RAM module with a new one.
+5. Tested the system; confirmed stability without crashes."
+400000383,"The office scanner is not responding when trying to scan documents, showing 'Connection Error' on the screen.",HDW,"office scanner, not responding, connection error",ICT,Hardware,Scanner,Office scanner not responding; connection error.,"1. Checked the scanner's connection to the computer; found a loose USB cable.
+2. Reconnected the USB cable securely and restarted the scanner.
+3. Updated the scanner driver software to the latest version.
+4. Verified the scanner's network settings; configured for proper connectivity.
+5. Tested scanning a document; the scanner responded correctly."
+400000384,The user's desktop power supply unit (PSU) emits a burning smell and the computer fails to power on.,HDW,"desktop PSU, burning smell, power failure",ICT,Hardware,Power Supply,Desktop power supply emits burning smell; computer fails to power on.,"1. Disconnected the power supply and inspected it for visible damage; found signs of burning.
+2. Removed the faulty power supply unit from the computer.
+3. Installed a new, compatible PSU with appropriate wattage.
+4. Ensured all power connections were securely attached to the motherboard and peripherals.
+5. Powered on the desktop; confirmed normal operation without any unusual smells."
+400000385,The conference room's webcam is not being detected by the video conferencing software during meetings.,HDW,"conference room, webcam, not detected",ICT,Hardware,Webcam,Conference room webcam not detected during meetings.,"1. Checked the webcam's USB connection to the computer; found it was not properly connected.
+2. Reconnected the webcam to a different USB port on the computer.
+3. Updated the video conferencing software to the latest version.
+4. Installed the latest drivers for the webcam.
+5. Tested the webcam during a video conference; confirmed it was detected and functional."
+400000386,"The office's multifunction printer is unable to fax documents, displaying a 'Fax Line Error' message.",HDW,"multifunction printer, fax error, fax line",ICT,Hardware,Printer,Multifunction printer unable to fax documents; 'Fax Line Error'.,"1. Checked the phone line connection to the printer; found a loose cable.
+2. Reconnected the phone line securely and reset the printer.
+3. Configured the fax settings on the printer to match the phone line type.
+4. Tested the fax function by sending a test fax to another device.
+5. Confirmed that the fax was sent successfully without errors."
+400000387,The user's wireless mouse frequently disconnects and lags during use.,HDW,"wireless mouse, disconnects, lagging",ICT,Hardware,Peripheral,Wireless mouse frequently disconnects and lags.,"1. Replaced the mouse's batteries with fresh ones.
+2. Checked the USB receiver for interference from other devices; moved it to a different port.
+3. Updated the mouse driver software to the latest version.
+4. Disabled power-saving features that may affect USB devices in the computer's settings.
+5. Tested the mouse; confirmed stable connection without lags."
+400000388,"The office security camera is not recording footage, showing 'No Storage Available' on the interface.",HDW,"security camera, not recording, no storage",ICT,Hardware,Camera,Security camera not recording footage; 'No Storage Available'.,"1. Checked the camera's storage settings; found the storage drive was full.
+2. Deleted old footage to free up space on the storage drive.
+3. Configured the camera to overwrite old recordings automatically when the storage is full.
+4. Restarted the camera to apply the new settings.
+5. Verified that the camera was recording new footage correctly."
+400000389,The user's docking station is overheating and causing the laptop to shut down unexpectedly when connected.,HDW,"docking station, overheating, laptop shutdown",ICT,Hardware,Docking Station,"Docking station overheating, causing laptop shutdown.","1. Inspected the docking station; found it was covered and had poor ventilation.
+2. Relocated the docking station to a well-ventilated area to improve airflow.
+3. Updated the docking station firmware to address potential thermal management issues.
+4. Connected the laptop and monitored the docking station temperature during use.
+5. Confirmed that the overheating and shutdown issues were resolved."
+400000390,"The user's docking station is not charging the laptop or connecting external monitors, even though the power light is on.",HDW,"docking station, not charging, external monitors",ICT,Hardware,Docking Station,Docking station not charging laptop or connecting external monitors.,"1. Checked the power adapter and cable connections to the docking station; found a loose connection.
+2. Reconnected all cables securely and reset the docking station.
+3. Updated the laptop's firmware and docking station drivers.
+4. Connected the laptop to the docking station and tested charging and monitor connections.
+5. Confirmed that the docking station was now functioning correctly."
+400000391,"The accounting software fails to open after a recent update, displaying an 'Application Error' message.",SFW,"accounting software, application error, update issue",ICT,Software,Application,Accounting software fails to open post-update with an 'Application Error'.,"1. Checked the software's log files for error codes; identified a missing DLL file.
+2. Downloaded and installed the missing DLL file from the software vendor's website.
+3. Re-registered the software components using the command line.
+4. Reinstalled the update, ensuring all files were correctly installed.
+5. Launched the software successfully without errors."
+400000392,"The CRM application runs slowly when generating customer reports, often timing out before completion.",SFW,"CRM, slow performance, report generation, timeout",ICT,Software,CRM,CRM application times out during report generation.,"1. Analyzed system performance and identified high CPU usage during report generation.
+2. Optimized the CRM database by indexing frequently accessed tables.
+3. Adjusted the application timeout settings to allow for longer processing times.
+4. Scheduled regular database maintenance to improve performance.
+5. Tested report generation; confirmed faster performance and no timeouts."
+400000393,The user reports that the project management software crashes unexpectedly when adding new tasks.,SFW,"project management software, crashes, adding tasks",ICT,Software,Project Management,Project management software crashes when adding new tasks.,"1. Reviewed the application logs and identified a memory allocation error.
+2. Increased the software's memory allocation in its configuration settings.
+3. Updated the project management software to the latest version to fix known bugs.
+4. Repaired the software installation to ensure all files were intact.
+5. Tested adding new tasks; the software operated without crashing."
+400000394,"The email client fails to send emails, displaying an SMTP connection error.",SFW,"email client, SMTP error, send emails",ICT,Software,Email,Email client fails to send emails with an SMTP connection error.,"1. Checked the email client's SMTP settings; found an incorrect server address.
+2. Corrected the SMTP server address and port number in the client's settings.
+3. Verified the user's authentication credentials.
+4. Tested the connection to the SMTP server; confirmed it was successful.
+5. Sent a test email; the email was sent without issues."
+400000395,"The antivirus software is not updating its virus definitions, leaving the system vulnerable.",SFW,"antivirus software, not updating, virus definitions",ICT,Software,Security,Antivirus software is not updating virus definitions.,"1. Checked the antivirus software's update settings; found the automatic updates disabled.
+2. Enabled automatic updates in the software settings.
+3. Manually triggered a virus definition update to ensure proper functionality.
+4. Monitored the update process and confirmed the latest definitions were installed.
+5. Scheduled regular updates to maintain system security."
+400000396,The user reports that the spreadsheet application crashes when opening large files.,SFW,"spreadsheet application, crashes, large files",ICT,Software,Office Suite,Spreadsheet application crashes when opening large files.,"1. Checked the system's memory usage while opening large files; found high memory consumption.
+2. Increased the system's virtual memory allocation to accommodate large files.
+3. Updated the spreadsheet application to the latest version.
+4. Advised the user to break down large files into smaller, more manageable sizes.
+5. Tested opening a large file; the application operated without crashing."
+400000397,The word processing software displays an 'Out of Memory' error when performing a mail merge operation.,SFW,"word processing, out of memory, mail merge",ICT,Software,Office Suite,Word processing software displays 'Out of Memory' during mail merge.,"1. Analyzed the document and found that the mail merge source contained excessive data.
+2. Split the mail merge source into smaller segments.
+3. Increased the word processing software's memory allocation in the settings.
+4. Reduced the number of records processed in a single mail merge operation.
+5. Performed the mail merge in batches; the 'Out of Memory' error was resolved."
+400000398,The graphic design software freezes when applying complex filters to high-resolution images.,SFW,"graphic design, software freeze, high-resolution images",ICT,Software,Design,Graphic design software freezes when applying complex filters.,"1. Checked the system's CPU and RAM usage during the filter application; found high resource consumption.
+2. Increased the software's cache size in its preferences settings.
+3. Updated the graphic design software to the latest version.
+4. Instructed the user to apply filters in smaller increments to manage resource usage.
+5. Tested the filter application; the software performed without freezing."
+400000399,"The backup software fails to complete the scheduled backup job, displaying a 'Disk Full' error.",SFW,"backup software, disk full, scheduled backup",ICT,Software,Backup,Backup software fails to complete scheduled backup due to 'Disk Full' error.,"1. Checked the backup destination; found insufficient disk space.
+2. Deleted old and unnecessary backup files to free up space.
+3. Configured the software to compress backups and save disk space.
+4. Verified the backup job settings and scheduled it to run during low usage hours.
+5. Successfully completed the backup job without errors."
+400000400,"The user is unable to access the database software, receiving a 'Database Connection Failed' error.",SFW,"database software, connection failed, access issue",ICT,Software,Database,Database software connection failed; user unable to access the database.,"1. Checked the database server status; found it was running without issues.
+2. Verified the user's network connection; found it was stable.
+3. Updated the database client's connection string to point to the correct server.
+4. Cleared the software's cache and re-entered the connection credentials.
+5. Tested the connection; the user was able to access the database successfully."
+400000401,"SAP users are experiencing delays when executing data extraction jobs, especially during peak business hours.",BASIS,"SAP, data extraction, delays, peak hours",ICT,BASIS,SAP ECC,Delays in executing SAP data extraction jobs during peak hours.,"1. Monitored the system using transaction ST03N; found high resource usage.
+2. Optimized the background job scheduling to distribute the load evenly.
+3. Increased the system's dialog and background work processes.
+4. Improved database access by adding indexes to the critical tables.
+5. Verified reduced delays during data extraction in peak hours."
+400000402,"Users encounter 'Insufficient Privileges' errors when attempting to access certain SAP modules, despite having the correct roles assigned.",BASIS,"SAP, insufficient privileges, access error",ICT,BASIS,SAP HCM,Insufficient Privileges' errors in SAP despite correct roles.,"1. Checked the user's role assignment and found missing authorizations in the role.
+2. Updated the role to include the necessary authorizations using transaction PFCG.
+3. Ran the user comparison in transaction PFCG to apply changes.
+4. Tested access to the modules with the user; confirmed successful access.
+5. Documented the role changes for future reference."
+400000403,"SAP system logs indicate frequent 'Short Dump' errors when users execute complex reports, causing transaction failure.",BASIS,"SAP, short dump, transaction failure, complex reports",ICT,BASIS,SAP BW,Frequent 'Short Dump' errors in SAP during complex report execution.,"1. Analyzed the short dump using transaction ST22 to identify the root cause.
+2. Found a memory allocation issue; increased the memory parameters in SAP profile.
+3. Optimized the affected reports by adjusting the ABAP code.
+4. Conducted thorough testing of the reports to ensure stability.
+5. Verified the absence of short dumps during report execution post-optimization."
+400000404,Users report that the SAP system is taking an unusually long time to generate daily financial reports.,BASIS,"SAP, slow performance, financial reports",ICT,BASIS,SAP ECC,SAP system slow in generating daily financial reports.,"1. Analyzed the system performance using transaction ST03N; found high database load.
+2. Tuned the database with proper indexing to improve query performance.
+3. Adjusted the buffer size for the report-related tables in the SAP system.
+4. Scheduled report generation during off-peak hours to reduce system load.
+5. Tested report generation; observed significant improvement in performance"
+400000405,The SAP system fails to send out scheduled email notifications for batch job completions.,BASIS,"SAP, email notifications, batch jobs, failure",ICT,BASIS,SAP ECC,SAP system fails to send scheduled email notifications for batch jobs.,"1. Checked the SMTP configuration in SAP using transaction SCOT.
+2. Found incorrect mail server settings; updated them to the correct SMTP server.
+3. Restarted the SAP communication layer to apply changes.
+4. Conducted a test email to verify the SMTP configuration.
+5. Confirmed that scheduled email notifications are now being sent successfully."
+400000406,SAP users experience frequent disconnections from the system with 'Connection to Partner Broken' errors.,BASIS,"SAP, disconnection, connection to partner broken",ICT,BASIS,SAP ECC,Frequent SAP system disconnections with 'Connection to Partner Broken' errors.,"1. Reviewed the network stability and found intermittent packet loss.
+2. Coordinated with the network team to stabilize the network connection.
+3. Increased the rdisp/keepalive parameter in SAP to maintain session persistence.
+4. Monitored the SAP system for any further disconnection issues.
+5. Verified improved system stability and reduced disconnections."
+400000407,Data inconsistencies are found in the SAP BW reports due to incomplete data loads.,BASIS,"SAP BW, data inconsistencies, incomplete data load",ICT,BASIS,SAP BW,Data inconsistencies in SAP BW reports due to incomplete data loads.,"1. Analyzed the data load process using transaction RSMO; found errors in the data source.
+2. Corrected the data source errors by updating the transformation rules.
+3. Deleted and reloaded the affected data in the InfoProvider.
+4. Ran a consistency check using transaction RSRV to verify data integrity.
+5. Confirmed that the SAP BW reports are now displaying consistent data."
+400000408,"SAP system users are unable to print documents directly from SAP to the network printer, receiving 'Spool Output Error'.",BASIS,"SAP, spool output error, printing issue",ICT,BASIS,SAP ECC,Unable to print documents from SAP due to 'Spool Output Error'.,"1. Checked the spool configuration in SAP using transaction SPAD; found incorrect printer settings.
+2. Corrected the printer settings to match the network printer's IP address.
+3. Cleared the spool request queue to remove stuck print jobs.
+4. Restarted the SAP spool work process to reinitialize the printing service.
+5. Performed a test print from SAP; confirmed successful document printing without errors"
+400000409,"SAP users report that the system hangs when accessing the SAP Fiori launchpad, leading to unresponsiveness.",BASIS,"SAP Fiori, system hangs, unresponsive",ICT,BASIS,SAP Fiori,SAP system hangs when accessing the SAP Fiori launchpad.,"1. Analyzed the Fiori system logs using transaction /IWFND/ERROR_LOG.
+2. Found high memory usage in the front-end server; increased the available memory allocation.
+3. Cleared the Fiori cache to improve the system's performance.
+4. Updated the Fiori front-end server to the latest patch level.
+5. Tested accessing the Fiori launchpad; confirmed it is responsive and stable"
+400000410,The SAP HCM system is not reflecting the updated employee data after a recent organizational change.,BASIS,"SAP HCM, employee data, not updated",ICT,BASIS,SAP HCM,SAP HCM system not reflecting updated employee data.,"1. Checked the organizational change batch job and found it had not run successfully.
+2. Corrected the errors in the batch job and re-executed it manually.
+3. Monitored the background processing using transaction SM37 to ensure completion.
+4. Performed a data synchronization to update the employee records.
+5. Verified that the updated employee data is now correctly reflected in the SAP HCM system."
+400000411,"SAP users are unable to log in to the system, with error 'Too many failed attempts' appearing even after resetting passwords.",BASIS,"SAP, login error, too many failed attempts",ICT,BASIS,SAP ECC,SAP users unable to log in due to 'Too many failed attempts' error.,"1. Checked the SAP system logs and found multiple failed login attempts, triggering the lockout policy.
+2. Used transaction SU01 to unlock the affected user accounts.
+3. Advised users to reset their passwords using transaction SU01.
+4. Monitored the login process and reviewed the security policy settings.
+5. Verified that users could log in successfully without the lockout issue."
+400000412,"The SAP system experiences frequent timeout errors during the transport of changes, causing delays in the change management process.",BASIS,"SAP, timeout error, transport of changes",ICT,BASIS,SAP ECC,Frequent timeout errors during SAP transport of changes.,"1. Analyzed the transport logs using transaction STMS; found prolonged transport queue processing times.
+2. Increased the parameter 'rdisp/max_wprun_time' to allow longer processing time for transports.
+3. Optimized the transport routes to ensure efficient movement of changes.
+4. Cleared the transport buffer to avoid unnecessary data buildup.
+5. Verified successful transport of changes without timeout errors."
