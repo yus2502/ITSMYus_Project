@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-#q!cn6h6jo_56xg4mn)$y^eqguqtze32*$f9i5xg4_bt+9^2c%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1','itsmyus-project.onrender.com']
 
 # Application definition
 
@@ -38,6 +38,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'YusProject.urls'
